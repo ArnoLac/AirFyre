@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+DjProfile.create(stage_name:"leni", user_id: 1, genre: "jazz", bio:"lele")
+
+
