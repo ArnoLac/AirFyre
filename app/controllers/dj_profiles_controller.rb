@@ -1,0 +1,2 @@
+class DjProfilesController < ApplicationController
+end
