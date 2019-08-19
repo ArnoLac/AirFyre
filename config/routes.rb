@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   end
 
   resources :dj_profiles, only: [:index, :show]
+
+  resources :bookings
 end
 

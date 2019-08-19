@@ -22,6 +22,7 @@ class DjProfilesController < ApplicationController
   # POST the new profile
   def create
     @dj_profile = DjProfile.new(dj_params)
+    @dj_profile.user = User.find(params[:user_id])
 
     if @dj_profile.save
       redirect_to @dj_profile, notice: 'Your Dj profile has been created succesfully!'
@@ -52,6 +53,6 @@ class DjProfilesController < ApplicationController
   end
 
   def dj_params
-    params.require(:dj_profile).permit(:user, :genre, :stage_name, :bio)
+    params.require(:dj_profile).permit(:genre, :stage_name, :bio)
   end
 end
