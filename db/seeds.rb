@@ -1,7 +1,30 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Review.destroy_all
+Booking.destroy_all
+DjProfile.destroy_all
+User.destroy_all
+
+(1..10).each { User.create!(email: Faker::Internet.email, password: "azerty") }
+
+(1..10).each do |x|
+  y = User.first.id - 1
+  dj = DjProfile.new(stage_name: Faker::Artist.name, bio: "meilleur DJ", genre: "electro")
+  dj.user = User.find(y + x)
+  dj.save!
+end
+
+(1..10).each do |x|
+  y = User.first.id - 1
+  z = DjProfile.first.id - 1
+  booking = Booking.new(date: DateTime.now, location: "Paris", set_length: 2)
+  booking.user = User.find(y + x)
+  booking.dj_profile = DjProfile.find(z + x)
+  booking.save!
+end
+
+(1..10).each do |x|
+  b = Booking.first.id-1
+  review = Review.new(fyre_stars: 4, comment: "le feu!!")
+  review.booking = Booking.find(b + x)
+  review.save!
+end
+
