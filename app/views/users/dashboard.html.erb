@@ -1,2 +1,24 @@
-<h1>Hello <%= current_user.email %> </h1>
+<% if @user.username.nil? %>
+  <h1>Hello <%= @user.email %> ! </h1>
+<% else %>
+  <h1>Hello <%= @user.username %> ! </h1>
+<% end %>
 
+<div>
+  <%= link_to "Change my password",  edit_user_registration_path  %>
+</div>
+
+<% if @user.photo.file.nil? %>
+  <div>
+    <%= simple_form_for(@user) do |f| %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.button :submit, "Update picture" %>
+    <% end %>
+  </div>
+<% else %>
+  <div>
+    <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
+
+  </div>
+<% end %>

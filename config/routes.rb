@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   get "/dashboard", to: "users#dashboard"
+  resources :users, only: [:update]
 
   get '/djs/:genres', to: 'dj_profiles#genre', as: 'genre'
 
