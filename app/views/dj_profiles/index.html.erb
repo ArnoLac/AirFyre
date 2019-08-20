@@ -1,0 +1,8 @@
+<h1>This is a great DJ list</h1>
+
+<ul>
+  <% @dj_profiles.each do |dj_profile| %>
+  <li><%= link_to dj_profile.stage_name, dj_profile_path(dj_profile) %></li>
+  <% end %>
+</ul>
+
