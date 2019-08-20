@@ -25,7 +25,7 @@
           <tr>
             <td><%= booking.name %></td>
             <td><%= booking.location %></td>
-            <td><%= booking.date %></td>
+            <td><%= booking.date.day %>-<%= booking.date.month %>-<%= booking.date.year %></td>
           </tr>
         <% end %>
       <% end %>
