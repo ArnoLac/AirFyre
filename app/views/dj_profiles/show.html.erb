@@ -18,12 +18,14 @@
 
     <!-- We need to show all past bookings before validation -->
     <div>
-      <% @bookings.dj_profile_id.each do |booking| %>
-        <tr>
-          <td><%= booking.name %></td>
-          <td><%= booking.location %></td>
-          <td><%= booking.date %></td>
-        </tr>
+      <% @bookings.each do |booking| %>
+        <% if booking.dj_profile_id == @dj_profile.id %>
+          <tr>
+            <td><%= booking.name %></td>
+            <td><%= booking.location %></td>
+            <td><%= booking.date %></td>
+          </tr>
+        <% end %>
       <% end %>
     </div>
 

@@ -9,6 +9,7 @@ class DjProfilesController < ApplicationController
   # we can see all dj profiles
   def show
    # @dj_profiles = DjProfile.all
+   @bookings = Booking.all
    @booking = Booking.new
   end
 
