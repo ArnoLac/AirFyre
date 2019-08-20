@@ -5,7 +5,7 @@
 
   <div class="container mt-5">
     <h1><%= @dj_profile.stage_name %></h1>
-    <h3><%= @dj_profile.genre.capitalize %></h3>
+    <h3><%= @dj_profile.genre.join %></h3>
     <p><%= @dj_profile.bio.capitalize %></p>
 
     <div>
@@ -14,11 +14,21 @@
     <div>
       <%= link_to "Book the Artist", new_booking_path  %>
     </div>
+
+
+    <!-- We need to show all past bookings before validation -->
     <div>
-      <p>
-        Past Bookings
-      </p>
+      <% @bookings.dj_profile_id.each do |booking| %>
+        <tr>
+          <td><%= booking.name %></td>
+          <td><%= booking.location %></td>
+          <td><%= booking.date %></td>
+        </tr>
+      <% end %>
     </div>
+
+    <%= render 'bookings/form' %>
+
     <div class="footer">
       <div class="footer-links">
         <a href="#"><i class="fab fa-facebook"></i></a>

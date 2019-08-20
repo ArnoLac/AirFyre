@@ -9,6 +9,7 @@ class DjProfilesController < ApplicationController
   # we can see all dj profiles
   def show
    # @dj_profiles = DjProfile.all
+   @booking = Booking.new
   end
 
   # we can create a new dj profile
@@ -26,7 +27,7 @@ class DjProfilesController < ApplicationController
     @dj_profile.user = User.find(params[:user_id])
 
     if @dj_profile.save
-      redirect_to @dj_profile, notice: 'Your Dj profile has been created succesfully!'
+      redirect_to dj_profile_path(@dj_profile), notice: 'Your Dj profile has been created succesfully!'
     else
       render :new
     end
@@ -35,7 +36,7 @@ class DjProfilesController < ApplicationController
   # PATCH/PUT as a user owning a dj profile i can update it
   def update
     if @dj_profile.update(dj_params)
-      redirect_to @dj_profile, notice: 'Your Dj profile has been updated succesfully'
+      redirect_to dj_profile_path(@dj_profile), notice: 'Your Dj profile has been updated succesfully'
     else
       render :edit
     end
@@ -44,7 +45,7 @@ class DjProfilesController < ApplicationController
   # As a user i can delete my dj profile
   def destroy
     @dj_profile.destroy
-    redirect_to dj_profiles.path
+    redirect_to dj_profile_path(@dj_profile)
   end
 
   private
