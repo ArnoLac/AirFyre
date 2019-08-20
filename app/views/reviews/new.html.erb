@@ -1,0 +1,8 @@
+<div class="add-review">
+  <h2>Leave a review</h2>
+  <%= simple_form_for [@dj_profile, @review] do |f| %>
+    <%= f.input :comment %>
+    <%= f.input :fyre_stars %>
+    <%= f.submit "add a review", class: "btn btn-primary" %>
+  <% end %>
+</div>

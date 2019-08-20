@@ -1,11 +1,8 @@
-
-
-
 <div class="container">
 
   <div class="container mt-5">
     <h1><%= @dj_profile.stage_name %></h1>
-    <h3><%= @dj_profile.genre.capitalize %></h3>
+    <h3><%= @dj_profile.genre.join(', ').capitalize %></h3>
     <p><%= @dj_profile.bio.capitalize %></p>
 
     <div>
@@ -19,10 +16,17 @@
         Past Bookings
       </p>
     </div>
+
     <div class="footer">
       <div class="footer-links">
         <a href="#"><i class="fab fa-facebook"></i></a>
       </div>
+    </div>
+
+    <div class="dj-reviews">
+      <% @dj_profile.reviews.each do |review| %>
+        <p><%= review.comment %><p>
+      <% end %>
     </div>
   </div>
 
