@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   def new
     # @review = Review.find(params[:review_id])
-    @dj_profile = DjProfile.find(params[:dj_profile_id])
+    @booking = Booking.find(params[:booking_id])
     @review = Review.new
   end
 
@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
     # DjProfile is not a column on reviews table
     # We need booking_id instead (need to nest this action in bookings)
     @review.save!
-    redirect_to dj_profile_path(@dj_profile)
+    redirect_to dashboard_path
   end
 
   private
