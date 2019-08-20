@@ -6,9 +6,10 @@ User.destroy_all
 (1..10).each { User.create!(email: Faker::Internet.email, password: "azerty") }
 
 (1..10).each do |x|
-  genres_list = ['Afro House', 'Bass House', 'Bassline', 'Big Room', 'Blues', 'Brass and Military', 'Breaks', 'Children', 'Country', 'Dance', 'Deep House', 'Deep Tech', 'Disco', 'Downtempo', 'Drum and Bass', 'Dubstep', 'Electro', 'Electronica', 'Folk', 'Folk, World, and Country', 'Funk  Soul', 'Future House', 'Garage', 'Grime', 'Hard Techno', 'Hardoce', 'HipHop', 'Jazz', 'Latin', 'Minimal', 'Newage', 'NonMusic', 'Nu Disco', 'Other', 'Pop', 'PopRock', 'Progressive House', 'Psytrance', 'RnB', 'Rap', 'Reggae', 'Rock', 'Soundtrack', 'Stage and Screen', 'Tech House', 'Traditional', 'Trance', 'Other']
+  # genres_list = ['Afro House', 'Bass House', 'Bassline', 'Big Room', 'Blues', 'Brass and Military', 'Breaks', 'Children', 'Country', 'Dance', 'Deep House', 'Deep Tech', 'Disco', 'Downtempo', 'Drum and Bass', 'Dubstep', 'Electro', 'Electronica', 'Folk', 'Folk, World, and Country', 'Funk  Soul', 'Future House', 'Garage', 'Grime', 'Hard Techno', 'Hardoce', 'HipHop', 'Jazz', 'Latin', 'Minimal', 'Newage', 'NonMusic', 'Nu Disco', 'Other', 'Pop', 'PopRock', 'Progressive House', 'Psytrance', 'RnB', 'Rap', 'Reggae', 'Rock', 'Soundtrack', 'Stage and Screen', 'Tech House', 'Traditional', 'Trance', 'Other']
   y = User.first.id - 1
-  dj = DjProfile.new(stage_name: Faker::Artist.name, bio: Faker::TvShows::SiliconValley.quote, genres: genres_list.sample(2))
+  soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
+  dj = DjProfile.new(stage_name: Faker::Artist.name, bio: Faker::TvShows::SiliconValley.quote, genres: $GENRES.sample(2), social_media: soundcloud)
   dj.user = User.find(y + x)
   dj.save!
 end
@@ -26,7 +27,7 @@ end
 (1..10).each do |x|
   stars = [1,2,3,4,5]
   b = Booking.first.id-1
-  review = Review.new(fyre_stars: stars.sample, comment: Faker::TvShows::SouthPark.quote )
+  review = Review.new(fyre_stars: stars.sample, comment: Faker::TvShows::SouthPark.quote)
   review.booking = Booking.find(b + x)
   review.save!
 end
