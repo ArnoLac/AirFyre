@@ -1,13 +1,30 @@
-<div class="container mt-5">
-  <h1><%= @dj_profile.stage_name %></h1>
-  <h3><%= @dj_profile.genre %></h3>
-  <p><%= @dj_profile.bio %></p>
 
-  <%= link_to "😈Go Back Home 😈", root_path %>
-  <div class="footer">
-    <div class="footer-links">
-      <a href="#"><i class="fab fa-facebook"></i></a>
+
+<div class="container">
+
+  <div class="container mt-5">
+    <h1><%= @dj_profile.stage_name %></h1>
+    <h3><%= @dj_profile.genre.capitalize %></h3>
+    <p><%= @dj_profile.bio.capitalize %></p>
+
+    <div>
+    <%= link_to "Go Back Home", root_path %>
+    </div>
+    <div>
+      <%= link_to "Book the Artist", new_booking_path  %>
+    </div>
+    <div>
+      <p>
+        Past Bookings
+      </p>
+    </div>
+    <div class="footer">
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+      </div>
     </div>
   </div>
+
 </div>
+
 
