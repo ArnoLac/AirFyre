@@ -6,3 +6,14 @@
   <% end %>
 </ul>
 
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Chose your genre
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <%  DjProfile.genres.each do |genre| %>
+    <%= link_to genre, genre_path(genre), class:"dropdown-item"  %>
+    <% end %>
+  </div>
+</div>
+
