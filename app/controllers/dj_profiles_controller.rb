@@ -31,8 +31,8 @@ class DjProfilesController < ApplicationController
   # POST the new profile
   def create
     @dj_profile = DjProfile.new(dj_params)
-    @dj_profile.user = User.find(params[:user_id])
-
+    @dj_profile.user = current_user
+    @dj_profile.genres = [params[:dj_profile][:genres]]
     if @dj_profile.save
       redirect_to dj_profile_path(@dj_profile), notice: 'Your Dj profile has been created succesfully!'
     else
