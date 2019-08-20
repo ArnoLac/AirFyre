@@ -1,17 +1,18 @@
+<div class="container">
+  <%= simple_form_for(@booking) do |b| %>
+    <%= b.error_notification %>
+    <%= b.error_notification message: b.object.errors[:base].to_sentence if b.object.errors[:base].present? %>
 
-<%= simple_form_for(@booking) do |b| %>
-  <%= b.error_notification %>
-  <%= b.error_notification message: b.object.errors[:base].to_sentence if b.object.errors[:base].present? %>
+    <div class="form-inputs">
+      <%= b.input :name %>
+      <%= b.input :date %>
+      <%= b.input :location %>
+      <%= b.input :set_length %>
+      <%= b.input :dj_profile_id, as: :hidden, input_html: {value: @dj_profile.id } %>
+    </div>
 
-  <div class="form-inputs">
-    <%= b.input :name %>
-    <%= b.input :dj_profile %>
-    <%= b.input :date %>
-    <%= b.input :location %>
-    <%= b.input :set_length %>
-  </div>
-
-  <div class="form-actions">
-    <%= b.button :submit %>
-  </div>
-<% end %>
+    <div class="form-actions">
+      <%= b.button :submit %>
+    </div>
+  <% end %>
+</div>

@@ -18,8 +18,9 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    if @booking.save
-      redirect_to @booking, notice: "Your booking request has been sent!"
+    # @booking.dj_profile =
+    if @booking.save!
+      redirect_to dj_profile_path(@booking.dj_profile), notice: "Your booking request has been sent!"
     else
       render :new
     end
@@ -27,7 +28,7 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.update(booking_params)
-      redirect_to @booking, notice: 'Your booking request has been updated succesfully'
+      redirect_to dj_profile_path(@booking.dj_profile), notice: 'Your booking request has been updated succesfully'
     else
       render :edit
     end
@@ -35,7 +36,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to bookings.path
+    redirect_to dj_profile_path(@booking.dj_profile)
   end
 
   private
@@ -45,6 +46,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date, :location, :set_length, :dj_profile)
+    params.require(:booking).permit(:name, :date, :location, :set_length, :dj_profile_id)
   end
 end

@@ -1,10 +1,8 @@
-
-
-
 <div class="container">
 
   <div class="container mt-5">
     <h1><%= @dj_profile.stage_name %></h1>
+
     <h3>Genres :
       <% @dj_profile.genres.each do |genre| %>
         <%= link_to genre, genre_path(genre)  %>
@@ -18,15 +16,33 @@
     <div>
       <%= link_to "Book the Artist", new_booking_path  %>
     </div>
+
+
+    <!-- We need to show all past bookings before validation -->
     <div>
-      <p>
-        Past Bookings
-      </p>
+      <% @bookings.each do |booking| %>
+        <% if booking.dj_profile_id == @dj_profile.id %>
+          <tr>
+            <td><%= booking.name %></td>
+            <td><%= booking.location %></td>
+            <td><%= booking.date %></td>
+          </tr>
+        <% end %>
+      <% end %>
     </div>
+
+    <%= render 'bookings/form' %>
+
     <div class="footer">
       <div class="footer-links">
         <a href="#"><i class="fab fa-facebook"></i></a>
       </div>
+    </div>
+
+    <div class="dj-reviews">
+      <% @dj_profile.reviews.each do |review| %>
+        <p><%= review.comment %><p>
+      <% end %>
     </div>
   </div>
 
