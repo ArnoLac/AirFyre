@@ -2,12 +2,14 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   devise_for :users
 
-  resources :users do
-    resources :dj_profiles, only: [:create, :new, :destroy, :edit, :update]
-  end
+  get "/dashboard", to: "users#dashboard"
+ 
+  get '/djs/:genre', to: 'dj_profiles#genre', as: 'genre'
 
-  resources :dj_profiles, only: [:index, :show]
+  resources :dj_profiles
 
   resources :bookings
+
+  resources :reviews, only: [:new, :create]
 end
 
