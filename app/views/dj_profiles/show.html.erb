@@ -3,12 +3,15 @@
   <div class="container mt-5">
     <h1><%= @dj_profile.stage_name %></h1>
 
-    <h3><%= @dj_profile.genre.join(', ').capitalize %></h3>
-
-    <p><%= @dj_profile.bio.capitalize %></p>
+    <h3>Genres :
+      <% @dj_profile.genres.each do |genre| %>
+        <%= link_to genre, genre_path(genre)  %>
+        <% end %>
+      </h3>
+    <p><%= @dj_profile.bio %></p>
 
     <div>
-    <%= link_to "Go Back Home", root_path %>
+    <%= link_to "Go Back to all Djs", dj_profiles_path %>
     </div>
     <div>
       <%= link_to "Book the Artist", new_booking_path  %>

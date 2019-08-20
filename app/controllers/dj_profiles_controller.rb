@@ -20,8 +20,8 @@ class DjProfilesController < ApplicationController
   end
 
   def genre
-    @genre = params[:genre]
-    @djs = DjProfile.select { |dj| dj.genre.include?(@genre) }
+    @genre = params[:genres]
+    @djs = DjProfile.select { |dj| dj.genres.include?(@genre) }
   end
 
   # as a user owning a dj profile i can edit it
