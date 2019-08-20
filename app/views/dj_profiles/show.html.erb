@@ -1,49 +1,62 @@
 <div class="container">
 
   <div class="container mt-5">
+    <div>
+    <%= link_to "< Go Back to all Djs", dj_profiles_path %>
+    </div>
+
+    <% if @dj_profile.user.photo.nil? %>
+      <%= image_tag "https://www.residentadvisor.net/images/profiles/breitlitz.jpg", alt: @dj_profile.stage_name, class:"img-thumbnail" %>
+      <% else %>
+      <%= image_tag @dj_profile.user.photo.url, alt: @dj_profile.stage_name, class:"img-thumbnail" %>
+      <% end %>
+
     <h1><%= @dj_profile.stage_name %></h1>
+    <div class="card">
 
-    <h3>Genres :
-      <% @dj_profile.genres.each do |genre| %>
-        <%= link_to genre, genre_path(genre)  %>
+      <h3>Genres :
+        <% @dj_profile.genres.each do |genre| %>
+          <%= link_to genre, genre_path(genre)  %>
+          <% end %>
+        </h3>
+      <p><%= @dj_profile.bio %></p>
+      <p>See Soundcloud : <%= link_to (@dj_profile.social_media) do %>
+        <i class="fab fa-soundcloud"></i></p>
         <% end %>
-      </h3>
-    <p><%= @dj_profile.bio %></p>
-
-    <div>
-    <%= link_to "Go Back to all Djs", dj_profiles_path %>
-    </div>
-    <div>
-      <%= link_to "Book the Artist", new_booking_path  %>
     </div>
 
+      <div>
+        <%= link_to "Book the Artist", "#collapseExample", class:"btn btn-primary", id:"booking-btn"  %>
+      </div>
+
+    <div class="card d-none", id="dj-booking-form">
+    <%= render 'bookings/form' %>
+    </div>
 
     <!-- We need to show all past bookings before validation -->
-    <div>
+    <h3><%= @dj_profile.stage_name %> previously played at:</h3>
+    <div class="card">
       <% @bookings.each do |booking| %>
         <% if booking.dj_profile_id == @dj_profile.id %>
           <tr>
-            <td><%= booking.name %></td>
-            <td><%= booking.location %></td>
-            <td><%= booking.date %></td>
+            <td>"<%= booking.name %>"</td>
+            <td>in <%= booking.location %></td>
+            <td>on <%= Date::MONTHNAMES[booking.date.month] %> <%= booking.date.year%></td>
           </tr>
         <% end %>
       <% end %>
     </div>
 
-    <%= render 'bookings/form' %>
-
-    <div class="footer">
-      <div class="footer-links">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-      </div>
-    </div>
-
-    <div class="dj-reviews">
+    <h3><%= @dj_profile.stage_name %>'s reviews</h3>
       <% @dj_profile.reviews.each do |review| %>
-        <p><%= review.comment %><p>
+      <div class="card">
+        <p style="font-weight: bold"><%= review.booking.user.username %></p>
+        <p><%= review.fyre_stars %> </p>
+        <p>"<%= review.comment %>"</p>
+      </div>
+        <p>Comment left on <span><%= Date::MONTHNAMES[review.booking.date.month] %></span> <span> <%= review.booking.date.year%></span></p>
       <% end %>
-    </div>
+
   </div>
 
 </div>
