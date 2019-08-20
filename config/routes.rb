@@ -6,7 +6,10 @@ Rails.application.routes.draw do
     resources :dj_profiles, only: [:create, :new, :destroy, :edit, :update]
   end
 
-  resources :dj_profiles, only: [:index, :show]
+  resources :dj_profiles, only: [:index, :show] do
+  end
+
+  get '/djs/:genre', to: 'dj_profiles#genre', as: 'genre'
 
   resources :bookings
 end
