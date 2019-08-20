@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :users do
     resources :dj_profiles
   end
+
+  resources :bookings
 end
