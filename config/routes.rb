@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'dj_profiles#index'
+  root to: 'pages#home'
   devise_for :users
 
   resources :users do
