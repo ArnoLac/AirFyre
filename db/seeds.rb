@@ -7,7 +7,7 @@ User.destroy_all
 
 (1..10).each do |x|
   y = User.first.id - 1
-  dj = DjProfile.new(stage_name: Faker::Artist.name, bio: "meilleur DJ", genre: "electro")
+  dj = DjProfile.new(stage_name: Faker::Artist.name, bio: "meilleur DJ", genre: ["electro", "disco"])
   dj.user = User.find(y + x)
   dj.save!
 end
@@ -15,7 +15,7 @@ end
 (1..10).each do |x|
   y = User.first.id - 1
   z = DjProfile.first.id - 1
-  booking = Booking.new(date: DateTime.now, location: "Paris", set_length: 2)
+  booking = Booking.new(name: "FyreFestival", date: DateTime.now, location: "Paris", set_length: 2)
   booking.user = User.find(y + x)
   booking.dj_profile = DjProfile.find(z + x)
   booking.save!
