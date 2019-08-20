@@ -1,5 +1,6 @@
 class DjProfilesController < ApplicationController
   before_action :set_dj_profile, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @dj_profiles = DjProfile.all
