@@ -6,24 +6,27 @@ User.destroy_all
 (1..10).each { User.create!(email: Faker::Internet.email, password: "azerty") }
 
 (1..10).each do |x|
+  genre_list = ['Afro House', 'Bass House', 'Bassline', 'Big Room', 'Blues', 'Brass and Military', 'Breaks', 'Children', 'Country', 'Dance', 'Deep House', 'Deep Tech', 'Disco', 'Downtempo', 'Drum and Bass', 'Dubstep', 'Electro', 'Electronica', 'Folk', 'Folk, World, and Country', 'Funk  Soul', 'Future House', 'Garage', 'Grime', 'Hard Techno', 'Hardoce', 'HipHop', 'Jazz', 'Latin', 'Minimal', 'Newage', 'NonMusic', 'Nu Disco', 'Other', 'Pop', 'PopRock', 'Progressive House', 'Psytrance', 'RnB', 'Rap', 'Reggae', 'Rock', 'Soundtrack', 'Stage and Screen', 'Tech House', 'Traditional', 'Trance', 'Other']
   y = User.first.id - 1
-  dj = DjProfile.new(stage_name: Faker::Artist.name, bio: "meilleur DJ", genre: ["electro", "disco"])
+  dj = DjProfile.new(stage_name: Faker::Artist.name, bio: Faker::TvShows::SiliconValley.quote, genre: genre_list.sample(2))
   dj.user = User.find(y + x)
   dj.save!
 end
 
 (1..10).each do |x|
+  location_list = ["Paris", "Berlin", "Rotterdam", "Kiev", "Tourcoing", "Limoges"]
   y = User.first.id - 1
   z = DjProfile.first.id - 1
-  booking = Booking.new(name: "FyreFestival", date: DateTime.now, location: "Paris", set_length: 2)
+  booking = Booking.new(name: Faker::TvShows::SiliconValley.company, date: DateTime.now, location: location_list.sample, set_length: 2)
   booking.user = User.find(y + x)
   booking.dj_profile = DjProfile.find(z + x)
   booking.save!
 end
 
 (1..10).each do |x|
+  stars = [1,2,3,4,5]
   b = Booking.first.id-1
-  review = Review.new(fyre_stars: 4, comment: "le feu!!")
+  review = Review.new(fyre_stars: stars.sample, comment: Faker::TvShows::SouthPark.quote )
   review.booking = Booking.find(b + x)
   review.save!
 end
