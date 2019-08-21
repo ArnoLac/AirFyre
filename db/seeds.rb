@@ -3,7 +3,12 @@ Booking.destroy_all
 DjProfile.destroy_all
 User.destroy_all
 
-(1..10).each { User.create!(email: Faker::Internet.email, password: "azerty") }
+(1..10).each do
+  url = "https://www.pwfm.fr/uploads/artwork540.jpg"
+  user = User.new(email: Faker::Internet.email, password: "azerty")
+  user.remote_photo_url = url
+  user.save!
+end
 
 (1..10).each do |x|
   # genres_list = ['Afro House', 'Bass House', 'Bassline', 'Big Room', 'Blues', 'Brass and Military', 'Breaks', 'Children', 'Country', 'Dance', 'Deep House', 'Deep Tech', 'Disco', 'Downtempo', 'Drum and Bass', 'Dubstep', 'Electro', 'Electronica', 'Folk', 'Folk, World, and Country', 'Funk  Soul', 'Future House', 'Garage', 'Grime', 'Hard Techno', 'Hardoce', 'HipHop', 'Jazz', 'Latin', 'Minimal', 'Newage', 'NonMusic', 'Nu Disco', 'Other', 'Pop', 'PopRock', 'Progressive House', 'Psytrance', 'RnB', 'Rap', 'Reggae', 'Rock', 'Soundtrack', 'Stage and Screen', 'Tech House', 'Traditional', 'Trance', 'Other']
