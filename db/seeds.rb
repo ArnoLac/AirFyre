@@ -50,6 +50,7 @@ dj.save!
     booking = Booking.new(name: Faker::TvShows::SiliconValley.company, date: DateTime.now, location: location_list.sample, set_length: 2)
     booking.user = User.find(y + x)
     booking.dj_profile = DjProfile.find(z + x)
+    booking.validated = true
     booking.save!
   end
 end
