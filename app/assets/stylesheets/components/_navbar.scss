@@ -1,13 +1,31 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $fyre-dark-blue;
+
+  i {
+    margin-left: 30px;
+    color: white;
+    font-size: 40px;
+  }
+
+  i:hover {
+    color: $fyre-orange;
+  }
+
+  #fyre {
+    color: white;
+    font-size: 40px;
+    padding-left: 5px;
+  }
+
+  .navbar-link {
+    text-decoration: none;
+    color: white;
+    margin: 10px;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
 }
 

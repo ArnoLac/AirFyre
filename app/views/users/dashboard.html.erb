@@ -1,24 +1,90 @@
-<% if @user.username.nil? %>
-  <h1>Hello <%= @user.email %> ! </h1>
-<% else %>
-  <h1>Hello <%= @user.username %> ! </h1>
-<% end %>
+<div class="container">
 
-<div>
-  <%= link_to "Change my password",  edit_user_registration_path  %>
+<div class="dashboard-card">
+  <div class="d-flex justify-content-between align-items-center">
+    <%= cl_image_tag @user.photo, height: 150, width: 200, crop: :fill %>
+    <div>
+      <% if @user.username.nil? %>
+      <h1>Hello <%= @user.email %> ! </h1>
+      <% else %>
+      <h1>Hello <%= @user.username %> ! </h1>
+      <% end %>
+    </div>
+    <div >
+      <% if DjProfile.find_by(user_id: @user.id) %>
+        <%= link_to "My DJ page",  dj_profile_path(DjProfile.find_by(user_id: @user.id).id), class: "btn-ghost"  %>
+        <% else %>
+        <%= link_to "Create a DJ page",  new_dj_profile_path, class: "btn-ghost"   %>
+        <% end %>
+    </div>
+  </div>
 </div>
 
-<% if @user.photo.file.nil? %>
-  <div>
-    <%= simple_form_for(@user) do |f| %>
-      <%= f.input :photo %>
-      <%= f.input :photo_cache, as: :hidden %>
-      <%= f.button :submit, "Update picture" %>
-    <% end %>
-  </div>
+<% if DjProfile.find_by(user_id: @user.id) %>
+<div class="dashboard-card">
+  <h3 style="margin-bottom: 25px">My Bookings (DJ view)</h3>
+  <% @bookings.each do |booking| %>
+    <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 10px">
+      <h5 style="margin: 0"><%= booking.name %>, <%= booking.location %> | <%= Date::MONTHNAMES[booking.date.month] %> <%= booking.date.year%></h5>
+      <div>
+        <% if booking.validated == false %>
+          <%= simple_form_for(booking) do |f| %>
+            <%= f.input :validated, as: :hidden, input_html: { value: true } %>
+            <%= f.button :submit, "Accept Booking",class: "btn-ghost" %>
+          <% end %>
+        <% else %>
+          <h5 style="color: green">Validated</h5>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
 <% else %>
-  <div>
-    <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
-
+<div class="dashboard-card">
+  <h3 style="margin-bottom: 25px">My Bookings (Promoter view)</h3>
+  <% @bookings.each do |booking| %>
+  <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 10px">
+    <h5 style="margin: 0"><%= booking.name %>, <%= booking.location %> | <%= Date::MONTHNAMES[booking.date.month] %>
+      <%= booking.date.year%></h5>
+    <div>
+      <% if booking.validated == false %>
+      <h6 style="color:orange" style="margin: 0">Pending</h6>
+      <% else %>
+      <h6 style="color:green" style="margin: 0">Validated</h6>
+      <% end %>
+    </div>
   </div>
+  <% end %>
+</div>
 <% end %>
+
+
+<div class="dashboard-card">
+  <h3 style="margin-bottom: 25px">Profile Admin</h3>
+
+    <div class="d-flex justify-content-between dashboard" style="margin-bottom: 10px">
+      <div>
+        <%= link_to "Change my username", "#user-form", class:"btn-ghost", id:"username-btn"  %>
+        <div class="card d-none" , id="user-form">
+            <%= render 'users/form' %>
+        </div>
+      </div>
+
+      <div>
+        <%= link_to "Change my password",  edit_user_registration_path, class:"btn-ghost"  %>
+      </div>
+
+      <div>
+          <%= link_to "Change my picture", "#picture-form", class:"btn-ghost", id:"picture-btn"  %>
+          <div class="card d-none" , id="picture-form">
+            <%= simple_form_for(@user) do |f| %>
+              <%= f.input :photo %>
+              <%= f.input :photo_cache, as: :hidden %>
+              <%= f.button :submit, "Update picture" %>
+            <% end %>
+          </div>
+      </div>
+    </div>
+</div>
+
+</div>

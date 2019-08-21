@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def dashboard
     @user = current_user
+    @bookings = current_user.bookings
   end
 
   def update
@@ -9,7 +10,7 @@ class UsersController < ApplicationController
     redirect_to dashboard_path
   end
 
-    private
+  private
 
   def user_params
     params.require(:user).permit(:username, :photo)

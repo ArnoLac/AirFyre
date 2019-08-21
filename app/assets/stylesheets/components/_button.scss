@@ -1,0 +1,30 @@
+.btn-ghost {
+  color: $fyre-dark-blue;
+  border: 1px solid $fyre-dark-blue;
+  padding: 8px 24px;
+  border-radius: 50px;
+  // font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+a.btn-ghost {
+  text-decoration: none;
+}
+
+.btn-ghost:hover {
+  opacity: 0.8;
+}
+
+.validated {
+  color: green;
+  padding: 8px 24px;
+  border-radius: 50px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+a.validated {
+  text-decoration: none;
+}
+
