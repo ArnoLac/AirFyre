@@ -1,0 +1,91 @@
+// .cards-container {
+
+// }
+
+// .card-container {
+
+// }
+
+// #dj_pic_and_rating_card {
+
+// }
+
+// #dj_bookings_and_links_card {
+
+// }
+
+// #dj_bio_card {
+
+// }
+
+.background-playground {
+  background-color: #394154;
+}
+
+.bio-card {
+  background-color: #F4F4F4;
+  box-shadow: 3px 3px 7px rgba(30, 30, 30, 0.3);
+  border-radius: 10px;
+  width: 250px;
+  padding: 30px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h3 {
+    // margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  p {
+    text-align: center;
+  }
+}
+
+.btn-ghost {
+  color: #394154;
+  border: 1px solid #394154;
+  padding: 8px 24px;
+  border-radius: 50px;
+  // font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 0.8;
+}
+
+.pic-name-rating-card {
+  background-color: #F4F4F4;
+  box-shadow: 3px 3px 7px rgba(30, 30, 30, 0.3);
+  border-radius: 10px;
+  width: 400px;
+  padding: 30px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    margin-top: 30px;
+  }
+}
+
+.input-group.md-form.form-sm.form-1 input{
+border: 1px solid #bdbdbd;
+border-top-right-radius: 0.25rem;
+border-bottom-right-radius: 0.25rem;
+}
+.input-group.md-form.form-sm.form-2 input {
+border: 1px solid #bdbdbd;
+border-top-left-radius: 0.25rem;
+border-bottom-left-radius: 0.25rem;
+}
+.input-group.md-form.form-sm.form-2 input.red-border {
+border: 1px solid #ef9a9a;
+}
+.input-group.md-form.form-sm.form-2 input.lime-border {
+border: 1px solid #cddc39;
+}
+.input-group.md-form.form-sm.form-2 input.amber-border {
+border: 1px solid #ffca28;
+}
+
+
