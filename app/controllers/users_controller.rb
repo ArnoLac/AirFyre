@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def dashboard
     @user = current_user
-    @bookings = current_user.dj_profile_bookings
+    @bookings = current_user.bookings
   end
 
   def update

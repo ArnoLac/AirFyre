@@ -32,14 +32,13 @@ end
   end
 end
 
-(1..10).each do |x|
+(1..50).each do |x|
   stars = [1,2,3,4,5]
   comments = ["Crazy set!", "Amazing performance", "Very professionnal", "Not that great", "Did not show up.."]
   b = Booking.first.id-1
-  (1..5).each do
-    review = Review.new(fyre_stars: stars.sample, comment: comments.sample)
-    review.booking = Booking.find(b + x)
-    review.save!
+  review = Review.new(fyre_stars: stars.sample, comment: comments.sample)
+  review.booking = Booking.find(b + x)
+  review.save!
   end
 end
 
