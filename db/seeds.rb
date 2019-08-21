@@ -6,6 +6,7 @@ User.destroy_all
 (1..10).each do
   url = "https://www.pwfm.fr/uploads/artwork540.jpg"
   user = User.new(email: Faker::Internet.email, password: "azerty")
+  user.username = Faker::Name.name
   user.remote_photo_url = url
   user.save!
 end
@@ -23,18 +24,23 @@ end
   location_list = ["Paris", "Berlin", "Rotterdam", "Kiev", "Tourcoing", "Limoges"]
   y = User.first.id - 1
   z = DjProfile.first.id - 1
-  booking = Booking.new(name: Faker::TvShows::SiliconValley.company, date: DateTime.now, location: location_list.sample, set_length: 2)
-  booking.user = User.find(y + x)
-  booking.dj_profile = DjProfile.find(z + x)
-  booking.save!
+  (1..5).each do
+    booking = Booking.new(name: Faker::TvShows::SiliconValley.company, date: DateTime.now, location: location_list.sample, set_length: 2)
+    booking.user = User.find(y + x)
+    booking.dj_profile = DjProfile.find(z + x)
+    booking.save!
+  end
 end
 
 (1..10).each do |x|
   stars = [1,2,3,4,5]
+  comments = ["Crazy set!", "Amazing performance", "Very professionnal", "Not that great", "Did not show up.."]
   b = Booking.first.id-1
-  review = Review.new(fyre_stars: stars.sample, comment: Faker::TvShows::SouthPark.quote)
-  review.booking = Booking.find(b + x)
-  review.save!
+  (1..5).each do
+    review = Review.new(fyre_stars: stars.sample, comment: comments.sample)
+    review.booking = Booking.find(b + x)
+    review.save!
+  end
 end
 
 
