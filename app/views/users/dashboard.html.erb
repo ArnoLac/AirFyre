@@ -4,9 +4,26 @@
   <h1>Hello <%= @user.username %> ! </h1>
 <% end %>
 
+  <div>
+    <%= link_to "Change my username", "#user-form", class:"btn btn-primary", id:"booking-btn"  %>
+  </div>
+
+  <div class="card d-none" , id="user-form">
+      <%= render 'users/form' %>
+  </div>
+
 <div>
   <%= link_to "Change my password",  edit_user_registration_path  %>
 </div>
+
+
+<div>
+  <%= link_to "Create a DJ page",  new_dj_profile_path  %>
+</div>
+
+
+
+
 
 <% if @user.photo.file.nil? %>
   <div>
