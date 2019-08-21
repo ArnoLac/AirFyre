@@ -18,17 +18,25 @@
   transform: scale(1.1);
 }
 
-.all-dj-btn {
+
+.buttons-clickables {
   position: absolute;
-  top: 200px;
-  right: 260px;
+  top: 330px;
+  right: 250px;
 }
 
-.dropdown {
-  position: absolute;
-  top: 290px;
-  right: 50px;
+.all-dj-btn {
+  padding: 25px;
+//   position: absolute;
+//   top: 200px;
+//   right: 260px;
 }
+
+// .dropdown {
+//   position: absolute;
+//   top: 290px;
+//   right: 50px;
+// }
 
 #dj-nina-k {
   position: absolute;
@@ -180,33 +188,33 @@
 
 #dj-venice-c {
   position: absolute;
-  top: 480px;
-  left: 665px;
-  width: 185px;
+  top: 40px;
+  left: 630px;
+  width: 250px;
 }
 
 
 #dj-fourtet {
   position: absolute;
-
+  top: 540px;
+  left: 640px;
+  width: 180px;
+  z-index: 970;
 }
 
-
-
-#dj-marc-r {
+#dj-claptone {
   position: absolute;
+  top: 525px;
+  left: 800px;
+  width: 220px;
+  z-index: 960;
 
 }
-
-
-#dj-imperatrice {
-  position: absolute;
-
-}
-
 
 #dj-moby {
   position: absolute;
-
+  top: 190px;
+  left: 650px;
+  width: 100px;
 }
 
