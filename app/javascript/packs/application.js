@@ -17,3 +17,7 @@ if (document.querySelector('#dj-booking-form')) {
 if (document.querySelector("#user-form")) {
   toggleForm("#username-btn", "#user-form");
 }
+
+if (document.querySelector("#picture-form")) {
+  toggleForm("#picture-btn", "#picture-form");
+}
