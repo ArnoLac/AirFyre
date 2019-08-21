@@ -8,7 +8,7 @@
     <% if @dj_profile.user.photo.nil? %>
       <%= image_tag "https://www.residentadvisor.net/images/profiles/breitlitz.jpg", alt: @dj_profile.stage_name, class:"img-thumbnail" %>
       <% else %>
-      <%= image_tag @dj_profile.user.photo.url, alt: @dj_profile.stage_name, class:"img-thumbnail" %>
+      <%= cl_image_tag @dj_profile.user.photo, alt: @dj_profile.stage_name, class:"img-thumbnail" %>
       <% end %>
 
     <h1><%= @dj_profile.stage_name %></h1>

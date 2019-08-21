@@ -21,4 +21,16 @@
     <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
 
   </div>
+
+<% end %>
+
+
+<% @bookings.each do |booking| %>
+  <h2><%= booking.name %>, <%= booking.location %> | <%= booking.date %></h2>
+  <% if booking.validated == false %>
+    <%= simple_form_for(booking) do |f| %>
+      <%= f.input :validated, as: :hidden, input_html: { value: true } %>
+      <%= f.button :submit, "Accept Booking" %>
+    <% end %>
+  <% end %>
 <% end %>
