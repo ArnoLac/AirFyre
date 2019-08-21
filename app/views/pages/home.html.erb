@@ -1,67 +1,117 @@
+<div class="cadre-dj">
 
-<!-- Container -->
+  <div class="all-dj-btn">
+    <%= link_to 'All our DJs', dj_profiles_path, class: "btn btn-secondary" %>
+  </div>
 
-
-
-<!--   <div class="cards-container">
-    <div class="card-container" id="dj_bio_card">
-
-    </div>
-    <div class="card-container" id="dj_pic_and_rating_card">
-
-    </div>
-    <div class="card-container" id= "dj_bookings_and_links_card">
-
-    </div>
-
-    </div>
-
-    </div>
-  </div> -->
-
-<div class="background-playground">
-  <div class="container pt-5">
-    <div class="bio-card">
-      <h3>BIO</h3>
-      <!-- <p><%= DjProfile.first.bio %></p> -->
-      <p>I simply imagine that my skeleton is me and my body is my house. That way I'm always home/ I simply imagine that my skeleton is me and my body is my house. That way I'm always home / I simply imagine that my skeleton is me and my body is my house. That way I'm always home / I simply imagine that my skeleton is me and my body is my house. That way I'm always home / I simply imagine that my skeleton is me and my body is my house. That way I'm always home</p>
+  <div class="dropdown">
+    <h5>What kind of music do you like ?</h5>
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Chose your genre
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <%  DjProfile.genres.each do |genre| %>
+      <%= link_to genre, genre_path(genre), class:"dropdown-item"  %>
+      <% end %>
     </div>
   </div>
 
-  <div class="container pt-5">
-    <div class="bio-card">
-      <div class="button-dj-booking">
-        <a class="btn btn-ghost" href="#">Book this WonderDj</a>
-      </div>
-    </div>
+  <div>
+    <%= image_tag "images_landing_page/nina_krav.jpg", :class => "style-card", :id => "dj-nina-k" %>
   </div>
 
-  <div class="container pt-5">
-    <div class="user-avatar">
-      <img class="dj-pic" src="https://cdn.pixabay.com/photo/2017/06/13/12/53/profile-2398782_960_720.png" height= "40" width="40" alt="">
-    </div>
+  <div>
+    <%= image_tag "images_landing_page/laurent-garnier.jpg", :class => "style-card", :id => "dj-laurent-g" %>
+  </div>
+
+  <div>
+    <%= image_tag "images_landing_page/daft-punk.jpg", :class => "style-card", :id => "dj-daft-p" %>
+  </div>
+
+  <div>
+    <%= image_tag "images_landing_page/hunee.jpg", :class => "style-card", :id => "dj-hunee" %>
+  </div>
+
+  <div>
+    <%= image_tag "images_landing_page/l-imperatrice.jpg", :class => "style-card", :id => "dj-imperatrice" %>
+  </div>
+
+  <div>
+    <%= image_tag "images_landing_page/parcels.jpg", :class => "style-card", :id => "dj-parcels" %>
+  </div>
+
+  <div>
+    <%= image_tag "images_landing_page/justice.jpg", :class => "style-card", :id => "dj-justice" %>
+  </div>
+
+  <div>
+    <%= image_tag "images_landing_page/auntie-flo.jpg", :class => "style-card", :id => "dj-auntie-f" %>
+  </div>
+
+  <div>
+    <%= image_tag "images_landing_page/daniel-avery.jpg", :class => "style-card", :id => "dj-daniel-a" %>
+  </div>
+
+  <div>
+    <%= image_tag "images_landing_page/breakbot.jpg", :class => "style-card", :id => "dj-breakbot" %>
+  </div>
+
+  <div>
+    <%= image_tag "images_landing_page/solomun.png", :class => "style-card", :id => "dj-solomun" %>
+  </div>
+
+  <div>
+    <%= image_tag "images_landing_page/marc-rebillet.jpg", :class => "style-card", :id => "dj-marc-r" %>
+  </div>
+
+  <div>
+    <%= image_tag "images_landing_page/flavien-berger.jpg", :class => "style-card", :id => "dj-flavien-b" %>
+  </div>
+
+  <div>
+    <%= image_tag "images_landing_page/fkj.jpg", :class => "style-card", :id => "dj-fkj" %>
+  </div>
+
+  <div>
+    <%= image_tag "images_landing_page/todd-terje.jpg", :class => "style-card", :id => "dj-todd-t" %>
+  </div>
+
+  <div>
+    <%= image_tag "images_landing_page/jean-tonique.jpg", :class => "style-card", :id => "dj-jean-t" %>
+  </div>
+
+  <div>
+    <%= image_tag "images_landing_page/palms-trax.jpg", :class => "style-card", :id => "dj-palms-t" %>
+  </div>
+
+  <div>
+    <%= image_tag "images_landing_page/papooz.jpg", :class => "style-card", :id => "dj-papooz" %>
+  </div>
+
+  <div>
+    <%= image_tag "images_landing_page/lewis-ofman.jpg", :class => "style-card", :id => "dj-lewis-o" %>
+  </div>
+
+  <div>
+    <%= image_tag "images_landing_page/peggy-gou.jpg", :class => "style-card", :id => "dj-peggy-g" %>
+  </div>
+
+  <div>
+    <%= image_tag "images_landing_page/venice-club.jpg", :class => "style-card", :id => "dj-venice-c" %>
+  </div>
+
+  <div>
+    <%#= image_tag "images_landing_page/fourtet.png", :class => "style-card", :id => "dj-fourtet" %>
   </div>
 
 
-  <div class="container pt-5">
-    <div class="pic-name-rating-card">
-      <img src="https://cdn.pixabay.com/photo/2017/06/13/12/53/profile-2398782_960_720.png" height= "360" width="360" alt="">
-      <h2><%= DjProfile.first.stage_name %></h2>
-      <p>🔥🔥🔥🔥</p>
-    </div>
-    </div>
 
-  <div class="input-group md-form form-sm form-1 pl-0">
-    <div class="input-group-prepend">
-      <span class="input-group-text purple lighten-3" id="basic-text1"><i class="fas fa-search text-white"
-          aria-hidden="true"></i></span>
-    </div>
-    <input class="form-control my-0 py-1" type="text" placeholder="Search" aria-label="Search">
+
+
+
+  <div>
+    <%#= image_tag "images_landing_page/moby.jpg", :class => "style-card", :id => "dj-moby" %>
+  </div>
 </div>
-
-  </div>
-</div>
-
-
 
 
