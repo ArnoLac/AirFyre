@@ -85,7 +85,7 @@
 
         <% @dj_profile.reviews.each do |review| %>
         <div class="indiv-review">
-          <p style="font-weight:500">Placeholder Jean-Michel <%= review.booking.user.username %> -
+          <p style="font-weight:500"><%= review.booking.user.username %> -
           <% review.fyre_stars.times do %>
             <i class="fas fa-fire" style="color:white"></i>
             <% end %>

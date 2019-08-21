@@ -11,6 +11,12 @@ User.destroy_all
   user.save!
 end
 
+url = "https://avatars1.githubusercontent.com/u/51454685?s=460&v=4"
+user = User.new(email: "lena@gmail.com", password: "azerty")
+user.username = "Lena"
+user.remote_photo_url = url
+user.save!
+
 (1..10).each do |x|
   y = User.first.id - 1
   soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
@@ -36,10 +42,9 @@ end
   stars = [1,2,3,4,5]
   comments = ["Crazy set!", "Amazing performance", "Very professionnal", "Not that great", "Did not show up.."]
   b = Booking.first.id-1
-  review = Review.new(fyre_stars: stars.sample, comment: comments.sample)
+  review = Review.new(fyre_stars: 4, comment: comments.sample)
   review.booking = Booking.find(b + x)
   review.save!
-  end
 end
 
 
