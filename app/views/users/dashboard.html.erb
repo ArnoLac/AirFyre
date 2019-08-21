@@ -23,7 +23,7 @@
 <% if DjProfile.find_by(user_id: @user.id) %>
 <div class="dashboard-card">
   <h3 style="margin-bottom: 25px">My Bookings (DJ view)</h3>
-  <% @bookings.each do |booking| %>
+  <% @bookings_dj.each do |booking| %>
     <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 10px">
       <h5 style="margin: 0"><%= booking.name %>, <%= booking.location %> | <%= Date::MONTHNAMES[booking.date.month] %> <%= booking.date.year%></h5>
       <div>
@@ -42,7 +42,7 @@
 <% else %>
 <div class="dashboard-card">
   <h3 style="margin-bottom: 25px">My Bookings (Promoter view)</h3>
-  <% @bookings.each do |booking| %>
+  <% @bookings_user.each do |booking| %>
   <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 10px">
     <h5 style="margin: 0"><%= booking.name %>, <%= booking.location %> | <%= Date::MONTHNAMES[booking.date.month] %>
       <%= booking.date.year%></h5>
