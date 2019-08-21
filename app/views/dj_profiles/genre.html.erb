@@ -1,9 +1,17 @@
-<h1>DJs that play <%= @genre %></h1>
+<div class="container">
+  <h1>Our DJs that play <%= @genre %></h1>
 
-<ul>
-  <% @djs.each do |dj_profile| %>
-  <li><%= link_to dj_profile.stage_name, dj_profile_path(dj_profile) %></li>
-  <% end %>
-</ul>
+  <%= link_to 'All our DJs', dj_profiles_path, class: "btn btn-secondary" %>
 
-<%= link_to 'Back to home', dj_profiles_path %>
+
+  <div class="index-container">
+    <% @djs.each do |dj_profile| %>
+      <%= link_to dj_profile_path(dj_profile) do %>
+        <div class="card">
+          <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path dj_profile.user.photo %>')"></div>
+          <span><%= dj_profile.stage_name %></span>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
