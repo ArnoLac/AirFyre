@@ -82,9 +82,18 @@
   }
 
   .btn-ghost {
-    font-size: 20px;
-    color: $fyre-orange;
+    font-size: 24px;
+    color: white;
+    background-color: $fyre-orange;
+    border: 1px solid $fyre-orange;
+    opacity: 1;
+    transition: background-color 0.3s ease;
+    transition: border 0.3s ease;
+  }
 
+  .btn-ghost:hover {
+    background-color: $fyre-darker-orange;
+    border: 1px solid $fyre-darker-orange;
   }
 
 
