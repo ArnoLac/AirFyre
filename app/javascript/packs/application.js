@@ -1,9 +1,9 @@
 import "bootstrap";
 
 
-const toggleForm = () => {
-  const btn = document.querySelector("#booking-btn");
-  const form = document.querySelector("#dj-booking-form");
+const toggleForm = (btn_id, form_id) => {
+  const btn = document.querySelector(btn_id);
+  const form = document.querySelector(form_id);
 
   btn.addEventListener('click', (event) => {
     form.classList.toggle("d-none");
@@ -11,5 +11,5 @@ const toggleForm = () => {
 }
 
 if (document.querySelector('#dj-booking-form')) {
-  toggleForm();
+  toggleForm("#booking-btn", "#dj-booking-form");
 }
