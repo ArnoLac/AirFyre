@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
-  <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <i class="fas fa-fire"></i> <span id="fyre"> FYRE</span>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -12,10 +12,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <div class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-      <%= link_to 'My dashboard', dashboard_path %>
-      <%= link_to "Se deconnecter", destroy_user_session_path, method: :delete %>
+      <%= link_to 'My dashboard', dashboard_path, class:"navbar-link" %>
+      <%= link_to "Se deconnecter", destroy_user_session_path, method: :delete , class:"navbar-link"%>
       <% else %>
-      <%= link_to "Se connecter", new_user_session_path %>
+      <%= link_to "Se connecter", new_user_session_path, class:"navbar-link" %>
       <% end %>
     </div>
   </div>
