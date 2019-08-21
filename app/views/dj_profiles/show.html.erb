@@ -10,7 +10,7 @@
         <h3>BIO</h3>
         <p><%= @dj_profile.bio %></p>
 
-        <p>Listen to <%= @dj_profile.stage_name%> on Soundcloud</p>
+        <p style="font-weight:500">Listen to <%= @dj_profile.stage_name%> on Soundcloud</p>
         <%= link_to (@dj_profile.social_media) do %>
           <i class="fab fa-soundcloud" style="font-size: 40px; color:$fyre-dark-blue"></i></p>
           <% end %>
@@ -20,15 +20,15 @@
 
       <% if @dj_profile.user.photo.file.nil? %>
         <%= image_tag "https://www.residentadvisor.net/images/profiles/breitlitz.jpg", alt: @dj_profile.stage_name, class:"avatar-large" %>
-        <% else %>
-        <%= image_tag @dj_profile.user.photo.file alt: @dj_profile.stage_name, class:"img-thumbnail" %>
-        <% end %>
+      <% else %>
+        <%= cl_image_tag @dj_profile.user.photo, alt: @dj_profile.stage_name, class:"avatar-large" %>
+      <% end %>
 
 
         <h1><%= @dj_profile.stage_name %></h1>
 
         <p>This DJ plays</p>
-          <span>
+          <span class="genres">
           <% @dj_profile.genres.each do |genre| %>
           <%= link_to genre, genre_path(genre), class:"genre-name"  %>
             <% end %>
@@ -51,14 +51,15 @@
         </p>
         <p class="reviews-count">out of <%= @dj_profile.reviews.count %> review(s)</p>
 
-        <%= link_to "Book the Artist", "#collapseExample", class:"btn-ghost mt-3", id:"booking-btn"  %>
+        <%= link_to "BOOK THE ARTIST", "#collapseExample", class:"btn-ghost mt-3", id:"booking-btn"  %>
 
       </div>
 
 
       <!-- We need to show all past bookings before validation -->
       <div class="dj-events-card">
-        <h3><%= @dj_profile.stage_name %>'s past events</h3>
+        <h3 class="mb-0"><%= @dj_profile.stage_name %>'s</h3>
+        <h3>PAST EVENTS</h3>
 
           <% @bookings.each do |booking| %>
             <% if booking.dj_profile_id == @dj_profile.id %>
@@ -84,7 +85,7 @@
 
         <% @dj_profile.reviews.each do |review| %>
         <div class="indiv-review">
-          <p>Placeholder Jean-Michel <%= review.booking.user.username %> -
+          <p style="font-weight:500">Placeholder Jean-Michel <%= review.booking.user.username %> -
           <% review.fyre_stars.times do %>
             <i class="fas fa-fire" style="color:white"></i>
             <% end %>
