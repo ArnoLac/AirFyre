@@ -48,6 +48,7 @@
             <i class="fas fa-fire"></i>
           <% end %>
         </p>
+        <p class="reviews-count">out of <%= @dj_profile.reviews.count %> review(s)</p>
 
         <%= link_to "Book the Artist", "#collapseExample", class:"btn-ghost mt-3", id:"booking-btn"  %>
 
@@ -60,7 +61,7 @@
 
           <% @bookings.each do |booking| %>
             <% if booking.dj_profile_id == @dj_profile.id %>
-              <p>
+              <p class="indiv-event">
                 "<%= booking.name %>"
                 in <%= booking.location %>
                 on <%= Date::MONTHNAMES[booking.date.month] %> <%= booking.date.year%>
@@ -91,7 +92,7 @@
             <i class="fas fa-fire" style="color:grey"></i>
             <% end %>
           </p>
-          <p class="pl-4">"<%= review.comment %>"</p>
+          <p class="comment">"<%= review.comment %>"</p>
         </div>
           <p>Comment left on <span><%= Date::MONTHNAMES[review.booking.date.month] %></span> <span> <%= review.booking.date.year%></span></p>
         <% end %>
