@@ -13,3 +13,7 @@ const toggleForm = (btn_id, form_id) => {
 if (document.querySelector('#dj-booking-form')) {
   toggleForm("#booking-btn", "#dj-booking-form");
 }
+
+if (document.querySelector("#user-form")) {
+  toggleForm("#username-btn", "#user-form");
+}

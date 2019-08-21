@@ -1,53 +1,66 @@
-<% if @user.username.nil? %>
-  <h1>Hello <%= @user.email %> ! </h1>
-<% else %>
-  <h1>Hello <%= @user.username %> ! </h1>
-<% end %>
+<div class="container">
 
+<div class="d-flex justify-content-between">
   <div>
-    <%= link_to "Change my username", "#user-form", class:"btn btn-primary", id:"booking-btn"  %>
-  </div>
-
-  <div class="card d-none" , id="user-form">
-      <%= render 'users/form' %>
-  </div>
-
-<div>
-  <%= link_to "Change my password",  edit_user_registration_path  %>
-</div>
-
-
-<div>
-  <%= link_to "Create a DJ page",  new_dj_profile_path  %>
-</div>
-
-
-
-
-
-<% if @user.photo.file.nil? %>
-  <div>
-    <%= simple_form_for(@user) do |f| %>
-      <%= f.input :photo %>
-      <%= f.input :photo_cache, as: :hidden %>
-      <%= f.button :submit, "Update picture" %>
+    <% if @user.username.nil? %>
+      <h1>Hello <%= @user.email %> ! </h1>
+    <% else %>
+      <h1>Hello <%= @user.username %> ! </h1>
     <% end %>
   </div>
-<% else %>
-  <div>
-    <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
+  <div >
+    <% if DjProfile.find_by(user_id: @user.id) %>
+      <%= link_to "My DJ page",  dj_profile_path(DjProfile.find_by(user_id: @user.id).id)  %>
+    <% else %>
+      <%= link_to "Create a DJ page",  new_dj_profile_path  %>
+    <% end %>
+  </div>
+</div>
 
+  <div>
+    <div>
+      <%= link_to "Change my username", "#user-form", class:"btn btn-primary", id:"username-btn"  %>
+    </div>
+
+    <div class="card d-none" , id="user-form">
+        <%= render 'users/form' %>
+    </div>
   </div>
 
-<% end %>
+  <div>
+    <%= link_to "Change my password",  edit_user_registration_path  %>
+  </div>
 
 
-<% @bookings.each do |booking| %>
-  <h2><%= booking.name %>, <%= booking.location %> | <%= booking.date %></h2>
-  <% if booking.validated == false %>
-    <%= simple_form_for(booking) do |f| %>
-      <%= f.input :validated, as: :hidden, input_html: { value: true } %>
-      <%= f.button :submit, "Accept Booking" %>
+
+
+
+
+
+  <% if @user.photo.file.nil? %>
+    <div>
+      <%= simple_form_for(@user) do |f| %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.button :submit, "Update picture" %>
+      <% end %>
+    </div>
+  <% else %>
+    <div>
+      <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
+
+    </div>
+
+  <% end %>
+
+
+  <% @bookings.each do |booking| %>
+    <h2><%= booking.name %>, <%= booking.location %> | <%= booking.date %></h2>
+    <% if booking.validated == false %>
+      <%= simple_form_for(booking) do |f| %>
+        <%= f.input :validated, as: :hidden, input_html: { value: true } %>
+        <%= f.button :submit, "Accept Booking" %>
+      <% end %>
     <% end %>
   <% end %>
-<% end %>
+</div>
