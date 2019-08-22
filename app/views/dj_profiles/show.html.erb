@@ -1,12 +1,9 @@
 
-  <div class="container mt-5">
+  <div class="container">
 
-    <div>
-    <%= link_to "< Go Back to all Djs", dj_profiles_path %>
-    </div>
     <div class="djdetails">
 
-      <div class="bio-card">
+      <div class="dj-card">
         <h3>BIO</h3>
         <p><%= @dj_profile.bio %></p>
 
@@ -16,7 +13,7 @@
           <% end %>
       </div>
 
-      <div class="pic-name-rating-card">
+      <div class="dj-card">
 
       <% if @dj_profile.user.photo.file.nil? %>
         <%= image_tag "https://www.residentadvisor.net/images/profiles/breitlitz.jpg", alt: @dj_profile.stage_name, class:"avatar-large" %>
@@ -47,13 +44,13 @@
         </p>
         <p class="reviews-count">out of <%= @dj_profile.reviews.count %> review(s)</p>
 
-        <%= link_to "BOOK THE ARTIST", "#collapseExample", class:"btn-ghost mt-3", id:"booking-btn"  %>
+        <%= link_to "BOOK THE ARTIST", "#collapseExample", class:"btn-ghost-orange mt-3", id:"booking-btn"  %>
 
       </div>
 
 
       <!-- We need to show all past bookings before validation -->
-      <div class="dj-events-card">
+      <div class="dj-card">
         <h3 class="mb-0"><%= @dj_profile.stage_name %>'s</h3>
         <h3>PAST EVENTS</h3>
 
@@ -75,13 +72,13 @@
       <%= render 'bookings/form' %>
       </div>
 
-    <div class="review-card">
+    <div class="dj-card">
 
       <h3><%= @dj_profile.stage_name %>'s reviews</h3>
 
         <% @dj_profile.reviews.each do |review| %>
         <div class="indiv-review">
-          <p style="font-weight:500">Placeholder Jean-Michel <%= review.booking.user.username %> -
+          <p style="font-weight:500"><%= review.booking.user.username %> -
           <% review.fyre_stars.times do %>
             <i class="fas fa-fire" style="color:white"></i>
             <% end %>
