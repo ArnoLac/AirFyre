@@ -48,3 +48,21 @@ a.btn-ghost-orange {
   background-color: $fyre-darker-orange;
   color: $fyre-platinium !important;
 }
+
+.btn-ghost-platinium {
+  color: $fyre-rich-blue;
+  background-color: $fyre-platinium;
+  border: none;
+  padding: 9px 24px;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+}
+
+a.btn-ghost-platinium {
+  text-decoration: none;
+}
+
+.btn-ghost-platinium:hover {
+  // opacity: 0.8;
+  background-color: $fyre-platinium;
+}

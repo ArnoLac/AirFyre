@@ -1,6 +1,6 @@
 <div class="container">
 
-<div class="dashboard-card">
+<div class="dashboard-card" id="top">
   <div class="d-flex justify-content-between align-items-center">
     <%= cl_image_tag @user.photo, height: 150, width: 200, crop: :fill %>
     <div>
@@ -12,9 +12,9 @@
     </div>
     <div >
       <% if DjProfile.find_by(user_id: @user.id) %>
-        <%= link_to "My DJ page",  dj_profile_path(DjProfile.find_by(user_id: @user.id).id), class: "btn-ghost"  %>
+        <%= link_to "My DJ page",  dj_profile_path(DjProfile.find_by(user_id: @user.id).id), class: "btn-ghost-orange"  %>
         <% else %>
-        <%= link_to "Create a DJ page",  new_dj_profile_path, class: "btn-ghost"   %>
+        <%= link_to "Create a DJ page",  new_dj_profile_path, class: "btn-ghost-orange"   %>
         <% end %>
     </div>
   </div>
@@ -22,10 +22,10 @@
 
 <% if DjProfile.find_by(user_id: @user.id) %>
 <div class="dashboard-card">
-  <h3 style="margin-bottom: 25px">My Bookings (DJ view)</h3>
+  <h3 style="margin-bottom: 30px">My Bookings as DJ</h3>
   <% @bookings_dj.each do |booking| %>
-    <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 10px">
-      <h5 style="margin: 0"><%= booking.name %>, <%= booking.location %> | <%= Date::MONTHNAMES[booking.date.month] %> <%= booking.date.year%></h5>
+    <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 15px">
+      <h5 style="margin: 0; color: #E5E5E5"><%= booking.name %>, <%= booking.location %> | <%= Date::MONTHNAMES[booking.date.month] %> <%= booking.date.year%></h5>
       <div>
         <% if booking.validated == false %>
           <%= simple_form_for(booking) do |f| %>
@@ -33,7 +33,7 @@
             <%= f.button :submit, "Accept Booking",class: "btn-ghost" %>
           <% end %>
         <% else %>
-          <h5 style="color: green">Validated</h5>
+          <h6 style="color: green">Validated</h6>
         <% end %>
       </div>
     </div>
@@ -41,10 +41,10 @@
 </div>
 <% else %>
 <div class="dashboard-card">
-  <h3 style="margin-bottom: 25px">My Bookings (Promoter view)</h3>
+  <h3 style="margin-bottom: 30px">My Bookings as Promoter</h3>
   <% @bookings_user.each do |booking| %>
-  <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 10px">
-    <h5 style="margin: 0"><%= booking.name %>, <%= booking.location %> | <%= Date::MONTHNAMES[booking.date.month] %>
+  <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 15px">
+    <h5 style="margin: 0; color: #E5E5E5"><%= booking.name %>, <%= booking.location %> | <%= Date::MONTHNAMES[booking.date.month] %>
       <%= booking.date.year%></h5>
     <div>
       <% if booking.validated == false %>
@@ -65,9 +65,6 @@
     <div class="d-flex justify-content-between dashboard" style="margin-bottom: 10px">
       <div>
         <%= link_to "Change my username", "#user-form", class:"btn-ghost", id:"username-btn"  %>
-        <div class="card d-none" , id="user-form">
-            <%= render 'users/form' %>
-        </div>
       </div>
 
       <div>
@@ -76,15 +73,28 @@
 
       <div>
           <%= link_to "Change my picture", "#picture-form", class:"btn-ghost", id:"picture-btn"  %>
-          <div class="card d-none" , id="picture-form">
-            <%= simple_form_for(@user) do |f| %>
-              <%= f.input :photo %>
-              <%= f.input :photo_cache, as: :hidden %>
-              <%= f.button :submit, "Update picture" %>
-            <% end %>
-          </div>
+        </div>
       </div>
+      <div class="d-flex justify-content-around" >
+
+        <div class="d-none" , id="user-form">
+          <%= render 'users/form' %>
+        </div>
+
+        <div class="d-none" , id="picture-form">
+          <div id="admin-container">
+            <div id="admin-form">
+              <%= simple_form_for(@user) do |f| %>
+                <%= f.input :photo %>
+                <%= f.input :photo_cache, as: :hidden %>
+                <%= f.button :submit, "Update picture", class:"btn-ghost-orange" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
     </div>
+
 </div>
 
 </div>
