@@ -23,6 +23,7 @@ User.destroy_all
 #   dj.save!
 # end
 
+GENRES = ['Disco', 'Deep House', 'House', 'Techno', 'Minimal', 'Electro']
 
 
 url = "app/assets/images/images_landing_page/nina_krav.jpg"
@@ -30,9 +31,9 @@ user = User.new(email: "nina@gmail.com", password: "azerty")
 user.username = "Nina"
 user.remote_photo_url = url
 user.save!
-soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
+soundcloud = "https://soundcloud.com/nina-kraviz"
 dj = DjProfile.new(stage_name: "Nina Kraviz", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["Techno"]
+dj.genres = ["Techno", "Minimal"]
 dj.user = user
 dj.save!
 
@@ -41,9 +42,9 @@ user = User.new(email: "lolo@gmail.com", password: "azerty")
 user.username = "Laurent"
 user.remote_photo_url = url
 user.save!
-soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
+soundcloud = "https://soundcloud.com/laurent-garnier"
 dj = DjProfile.new(stage_name: "Laurent Garner", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["Techno"]
+dj.genres = ["Techno", "House", "Electro"]
 dj.user = user
 dj.save!
 
@@ -54,62 +55,62 @@ user.remote_photo_url = url
 user.save!
 soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
 dj = DjProfile.new(stage_name: "Daft Punk", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["Electro"]
+dj.genres = ["Disco", "Techno", "House", "Electro"]
 dj.user = user
 dj.save!
 
 url = "app/assets/images/images_landing_page/hunee.jpg"
 user = User.new(email: "hun@gmail.com", password: "azerty")
-user.username = "Hun"
+user.username = "Hunee"
 user.remote_photo_url = url
 user.save!
-soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
+soundcloud = "https://soundcloud.com/hunee"
 dj = DjProfile.new(stage_name: "Hunee", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["House"]
+dj.genres = ["House", "Disco", "Deep House"]
 dj.user = user
 dj.save!
 
 url = "app/assets/images/images_landing_page/l-imperatrice.jpg"
 user = User.new(email: "limp@gmail.com", password: "azerty")
-user.username = "L'imp"
+user.username = "impé"
 user.remote_photo_url = url
 user.save!
-soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
+soundcloud = "https://soundcloud.com/l-imperatrice"
 dj = DjProfile.new(stage_name: "L'imperatrice", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["Disco"]
+dj.genres = ["Disco", "House", "Deep House"]
 dj.user = user
 dj.save!
 
 url = "app/assets/images/images_landing_page/parcels.jpg"
 user = User.new(email: "parcep@gmail.com", password: "azerty")
-user.username = "Parce"
+user.username = "Parcels"
 user.remote_photo_url = url
 user.save!
 soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
 dj = DjProfile.new(stage_name: "Parcels", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["Disco"]
+dj.genres = ["Disco", "Deep House"]
 dj.user = user
 dj.save!
 
 url = "app/assets/images/images_landing_page/justice.jpg"
 user = User.new(email: "juste@gmail.com", password: "azerty")
-user.username = "Juste"
+user.username = "Justice"
 user.remote_photo_url = url
 user.save!
-soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
+soundcloud = "https://soundcloud.com/justice-official"
 dj = DjProfile.new(stage_name: "Justice", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["Electro"]
+dj.genres = ["Electro", "Techno", "House", "Deep House"]
 dj.user = user
 dj.save!
 
 url = "app/assets/images/images_landing_page/auntie-flo.jpg"
 user = User.new(email: "aunt@gmail.com", password: "azerty")
-user.username = "Aunt"
+user.username = "Aunti-flooo"
 user.remote_photo_url = url
 user.save!
-soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
+soundcloud = "https://soundcloud.com/auntie-flo"
 dj = DjProfile.new(stage_name: "Auntie Flo", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["Deep House"]
+dj.genres = ["Deep House", "Techno", "House", "Disco"]
 dj.user = user
 dj.save!
 
@@ -118,9 +119,9 @@ user = User.new(email: "danny@gmail.com", password: "azerty")
 user.username = "Daniel"
 user.remote_photo_url = url
 user.save!
-soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
+soundcloud = "https://soundcloud.com/danielavery"
 dj = DjProfile.new(stage_name: "Daniel Avery", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["Techno"]
+dj.genres = ["Techno", "Minimal", "Electro"]
 dj.user = user
 dj.save!
 
@@ -129,9 +130,9 @@ user = User.new(email: "break@gmail.com", password: "azerty")
 user.username = "Break"
 user.remote_photo_url = url
 user.save!
-soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
+soundcloud = "https://soundcloud.com/breakbot"
 dj = DjProfile.new(stage_name: "Breakbot", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["Disco"]
+dj.genres = ["Disco", "House", "Minimal", "Deep House"]
 dj.user = user
 dj.save!
 
@@ -140,9 +141,9 @@ user = User.new(email: "sol@gmail.com", password: "azerty")
 user.username = "Sol"
 user.remote_photo_url = url
 user.save!
-soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
+soundcloud = "https://soundcloud.com/solomun"
 dj = DjProfile.new(stage_name: "Solomun", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["Techno"]
+dj.genres = ["Techno", "House", "Deep House", "Electro", "Minimal"]
 dj.user = user
 dj.save!
 
@@ -151,7 +152,7 @@ user = User.new(email: "marc@gmail.com", password: "azerty")
 user.username = "Marc"
 user.remote_photo_url = url
 user.save!
-soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
+soundcloud = "https://soundcloud.com/leae"
 dj = DjProfile.new(stage_name: "Marc Rebillet", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
 dj.genres = ["Techno"]
 dj.user = user
@@ -256,10 +257,126 @@ dj.genres = ["House", "Techno", "Deep House", "Disco"]
 dj.user = user
 dj.save!
 
+url = "app/assets/images/images_landing_page/fourtet.jpg"
+user = User.new(email: "fourtet@gmail.com", password: "azerty")
+user.username = "Fourtet"
+user.remote_photo_url = url
+user.save!
+soundcloud = "https://soundcloud.com/four-tet"
+dj = DjProfile.new(stage_name: "Four Tet", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
+dj.genres = ["Techno", "Electro", "Minimal"]
+dj.user = user
+dj.save!
 
+url = "app/assets/images/images_to_add/gilles-peterson.jpg"
+user = User.new(email: "gilles-peterson@gmail.com", password: "azerty")
+user.username = "Gilles Peterson"
+user.remote_photo_url = url
+user.save!
+soundcloud = "https://soundcloud.com/gillespeterson"
+dj = DjProfile.new(stage_name: "Gilles Peterson", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
+dj.genres = ["Techno", "Electro", "Disco", "House"]
+dj.user = user
+dj.save!
 
+url = "app/assets/images/images_to_add/jamie-xx.jpg"
+user = User.new(email: "jamiexx@gmail.com", password: "azerty")
+user.username = "Jamie xx"
+user.remote_photo_url = url
+user.save!
+soundcloud = "https://soundcloud.com/jamie-xx-official"
+dj = DjProfile.new(stage_name: "Jamie xx", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
+dj.genres = ["Techno", "Electro", "House"]
+dj.user = user
+dj.save!
 
+url = "app/assets/images/images_to_add/kazy-lambist.jpg"
+user = User.new(email: "kazylambist@gmail.com", password: "azerty")
+user.username = "Kaziy Lambist"
+user.remote_photo_url = url
+user.save!
+soundcloud = "https://soundcloud.com/kazy-lambist"
+dj = DjProfile.new(stage_name: "Kaziy Lambist", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
+dj.genres = ["Electro", "House", "Disco"]
+dj.user = user
+dj.save!
 
+url = "app/assets/images/images_to_add/kendrick-lamar.jpg"
+user = User.new(email: "kendricklamar@gmail.com", password: "azerty")
+user.username = "Kendrick Lamar"
+user.remote_photo_url = url
+user.save!
+soundcloud = "https://soundcloud.com/kendrick-lamar-music"
+dj = DjProfile.new(stage_name: "Kendrick Lamar", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
+dj.genres = ["Disco"]
+dj.user = user
+dj.save!
+
+url = "app/assets/images/images_to_add/nicolas-cruz.png"
+user = User.new(email: "nicolascruz@gmail.com", password: "azerty")
+user.username = "Nicolas Cruz"
+user.remote_photo_url = url
+user.save!
+soundcloud = "https://soundcloud.com/kendrick-lamar-music"
+dj = DjProfile.new(stage_name: "Nicolas Cruz", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
+dj.genres = ["Techno", "House", "Deep House", "Minimal"]
+dj.user = user
+dj.save!
+
+url = "app/assets/images/images_to_add/nicolas-jaar.jpg"
+user = User.new(email: "nicolasjaar@gmail.com", password: "azerty")
+user.username = "Nicolas Jaar"
+user.remote_photo_url = url
+user.save!
+soundcloud = "https://soundcloud.com/nicolas-jaar"
+dj = DjProfile.new(stage_name: "Nicolas Jaar", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
+dj.genres = ["Techno", "House", "Deep House", "Minimal"]
+dj.user = user
+dj.save!
+
+url = "app/assets/images/images_to_add/nu.png"
+user = User.new(email: "nu@gmail.com", password: "azerty")
+user.username = "Nu"
+user.remote_photo_url = url
+user.save!
+soundcloud = "https://soundcloud.com/n-u"
+dj = DjProfile.new(stage_name: "Nu", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
+dj.genres = ["Techno", "Deep House", "Minimal"]
+dj.user = user
+dj.save!
+
+url = "app/assets/images/images_to_add/polo&pan.jpg"
+user = User.new(email: "polo&pan@gmail.com", password: "azerty")
+user.username = "Polo & Pan"
+user.remote_photo_url = url
+user.save!
+soundcloud = "https://soundcloud.com/polo-pan"
+dj = DjProfile.new(stage_name: "Polo & Pan", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
+dj.genres = ["Techno", "Deep House", "House", "Electro"]
+dj.user = user
+dj.save!
+
+url = "app/assets/images/images_to_add/romare.jpg"
+user = User.new(email: "romare&pan@gmail.com", password: "azerty")
+user.username = "Romare"
+user.remote_photo_url = url
+user.save!
+soundcloud = "https://soundcloud.com/romare"
+dj = DjProfile.new(stage_name: "Romare", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
+dj.genres = ["Techno", "Deep House", "House", "Disco", "Minimal"]
+dj.user = user
+dj.save!
+
+url = "app/assets/images/images_to_add/sebastien-tellier.jpg"
+user = User.new(email: "sebastientellier&pan@gmail.com", password: "azerty")
+user.username = "Sebastien Tellier"
+user.remote_photo_url = url
+user.save!
+soundcloud = "https://soundcloud.com/romare"
+dj = DjProfile.new(stage_name: "Sebastien Tellier", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
+dj.genres = ["Deep House", "Disco", "Minimal"]
+dj.user = user
+dj.save!
 
 #DJ for demo
 url = "https://www.pwfm.fr/uploads/artwork540.jpg"
@@ -272,8 +389,6 @@ dj = DjProfile.new(stage_name: "Gautier the man", bio: Faker::TvShows::SiliconVa
 dj.genres = ["Disco"]
 dj.user = user
 dj.save!
-
-
 
 #random bookings
 (1..22).each do |x|
