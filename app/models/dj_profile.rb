@@ -9,7 +9,7 @@ class DjProfile < ApplicationRecord
   validates :stage_name, presence: true
   validates :bio, presence: true
 
-  GENRES = ['Disco', 'Drum and Bass', 'Electro', 'House', 'Techno', 'HipHop', 'Minimal', 'Electro']
+  GENRES = ['Disco', 'Deep House', 'House', 'Techno', 'Minimal', 'Electro']
 
   def self.genres
     GENRES
