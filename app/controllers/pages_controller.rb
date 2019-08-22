@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     if params[:query].nil? == false
-      params[:query] == "All DJs" ? @dj_profiles = DjProfile.all.sample(21) : @dj_profiles = DjProfile.where(genres: [params[:query]]).sample(21)
+      params[:query] == "All DJs" ? @dj_profiles = DjProfile.all.sample(21) : @dj_profiles = DjProfile.where("'#{params[:query]}' = ANY (genres)").sample(21)
     else
       @dj_profiles = DjProfile.all.sample(21)
     end
