@@ -20,107 +20,13 @@
   </div>
 
 
-  <div>
-    <%= image_tag "images_landing_page/nina_krav.jpg", :class => "style-card", :id => "dj-nina-k" %>
+  <% @dj_profiles.each_with_index do |profile, index| %>
+    <div>
+      <%= link_to dj_profile_path(profile) do %>
+      <%= cl_image_tag profile.user.photo, :class => "style-card img-fit", :id => "dj-#{index + 1}" %>
+      <% end %>
+    </div>
+  <% end %>
+
   </div>
-
-  <div>
-    <%= image_tag "images_landing_page/laurent-garnier.jpg", :class => "style-card", :id => "dj-laurent-g" %>
-  </div>
-
-  <div>
-    <%= image_tag "images_landing_page/daft-punk.jpg", :class => "style-card", :id => "dj-daft-p" %>
-  </div>
-
-  <div>
-    <%= image_tag "images_landing_page/hunee.jpg", :class => "style-card", :id => "dj-hunee" %>
-  </div>
-
-  <div>
-    <%= image_tag "images_landing_page/l-imperatrice.jpg", :class => "style-card", :id => "dj-imperatrice" %>
-  </div>
-
-  <div>
-    <%= image_tag "images_landing_page/parcels.jpg", :class => "style-card", :id => "dj-parcels" %>
-  </div>
-
-  <div>
-    <%= image_tag "images_landing_page/justice.jpg", :class => "style-card", :id => "dj-justice" %>
-  </div>
-
-  <div>
-    <%= image_tag "images_landing_page/auntie-flo.jpg", :class => "style-card", :id => "dj-auntie-f" %>
-  </div>
-
-  <div>
-    <%= image_tag "images_landing_page/daniel-avery.jpg", :class => "style-card", :id => "dj-daniel-a" %>
-  </div>
-
-  <div>
-    <%= image_tag "images_landing_page/breakbot.jpg", :class => "style-card", :id => "dj-breakbot" %>
-  </div>
-
-  <div>
-    <%= image_tag "images_landing_page/solomun.png", :class => "style-card", :id => "dj-solomun" %>
-  </div>
-
-  <div>
-    <%= image_tag "images_landing_page/marc-rebillet.jpg", :class => "style-card", :id => "dj-marc-r" %>
-  </div>
-
-  <div>
-    <%= image_tag "images_landing_page/flavien-berger.jpg", :class => "style-card", :id => "dj-flavien-b" %>
-  </div>
-
-  <div>
-    <%= image_tag "images_landing_page/fkj.jpg", :class => "style-card", :id => "dj-fkj" %>
-  </div>
-
-  <div>
-    <%= image_tag "images_landing_page/todd-terje.jpg", :class => "style-card", :id => "dj-todd-t" %>
-  </div>
-
-  <div>
-    <%= image_tag "images_landing_page/jean-tonique.jpg", :class => "style-card", :id => "dj-jean-t" %>
-  </div>
-
-  <div>
-    <%= image_tag "images_landing_page/palms-trax.jpg", :class => "style-card", :id => "dj-palms-t" %>
-  </div>
-
-  <div>
-    <%= image_tag "images_landing_page/papooz.jpg", :class => "style-card", :id => "dj-papooz" %>
-  </div>
-
-  <div>
-    <%= image_tag "images_landing_page/lewis-ofman.jpg", :class => "style-card", :id => "dj-lewis-o" %>
-  </div>
-
-  <div>
-    <%= image_tag "images_landing_page/peggy-gou.jpg", :class => "style-card", :id => "dj-peggy-g" %>
-  </div>
-
-  <div>
-    <%= image_tag "images_landing_page/venice-club.jpg", :class => "style-card", :id => "dj-venice-c" %>
-  </div>
-
-  <div>
-    <%= image_tag "images_landing_page/fourtet.jpg", :class => "style-card", :id => "dj-fourtet" %>
-  </div>
-
-  <div>
-    <%= image_tag "images_landing_page/claptone.jpg", :class => "style-card", :id => "dj-claptone" %>
-  </div>
-
-  <div>
-    <%= image_tag "images_landing_page/moby.jpg", :class => "style-card", :id => "dj-moby" %>
-  </div>
-
-<!--   <div>
-    <%#= image_tag "images_landing_page/detroit-swindle.jpg", :class => "style-card", :id => "dj-detroit-s" %>
-  </div> -->
-
-
-</div>
-
 

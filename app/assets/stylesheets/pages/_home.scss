@@ -6,215 +6,207 @@
     width: 165px;
   }
 }
-
+.img-fit {
+  object-fit: cover;
+}
 .style-card {
   border: 5px solid $fyre-platinium;
   border-radius: 5px;
   box-shadow: 2px -4px 16px -6px rgba(0,0,0,0.72);
+  display: flex;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
 }
-
 .style-card:hover {
   transform: scale(1.1);
 }
-
-
-.buttons-clickables {
-  position: absolute;
-  top: 330px;
-  right: 250px;
-}
-
 .all-dj-btn {
-  padding: 25px;
-//   position: absolute;
-//   top: 200px;
-//   right: 260px;
+  position: absolute;
+  top: 200px;
+  right: 260px;
 }
-
-// .dropdown {
-//   position: absolute;
-//   top: 290px;
-//   right: 50px;
-// }
-
-#dj-nina-k {
+.dropdown {
+  position: absolute;
+  top: 290px;
+  right: 50px;
+}
+#dj-1 {
   position: absolute;
   top: 80px;
   left: 105px;
+  width: 165px;
+  height: 113px;
   z-index: 100;
 }
-
-#dj-daft-p {
+#dj-2 {
   position: absolute;
   top: 60px;
   left: 240px;
+  width: 181px;
+  height: 130px;
   z-index: 150;
 }
-
-#dj-laurent-g {
+#dj-3 {
   position: absolute;
   top: 180px;
   left: 55px;
+  width: 165px;
+  height: 97px;
   z-index: 90;
 }
-
-#dj-hunee {
+#dj-4 {
   position: absolute;
   top: 250px;
   left: 40px;
+  width: 165px;
+  height: 242px;
   z-index: 85;
 }
-
-#dj-imperatrice {
+#dj-5 {
   position: absolute;
   top: 450px;
   left: 60px;
+  width: 165px;
+  height: 113px;
   z-index: 100;
 }
-
-#dj-parcels {
+#dj-6 {
   position: absolute;
   top: 155px;
   left: 195px;
+  width: 165px;
+  height: 216px;
   z-index: 60;
 }
-
-#dj-justice {
+#dj-7 {
   position: absolute;
   top: 40px;
   left: 390px;
+  width: 165px;
+  height: 113px;
   z-index: 155;
 }
-
-#dj-auntie-f {
+#dj-8 {
   position: absolute;
   top: 150px;
   left: 340px;
+  width: 165px;
+  height: 164px;
   z-index: 850;
 }
-
-#dj-daniel-a {
+#dj-9 {
   position: absolute;
   top: 300px;
   left: 330px;
-  width: 125px;
+  width: 165px;
+  height: 168px;
   z-index: 860;
 }
-
-#dj-breakbot {
+#dj-10 {
   position: absolute;
   top: 350px;
   left: 185px;
+  width: 165px;
+  height: 242px;
   z-index: 65;
 }
-
-#dj-solomun {
+#dj-11 {
   position: absolute;
   top: 560px;
   left: 225px;
   width: 170px;
+  height: 90px;
   z-index: 65;
 }
-
-#dj-marc-r {
+#dj-12 {
   position: absolute;
   top: 540px;
   left: 145px;
-  z-index: 110;
   width: 90px;
+  height: 90px;
+  z-index: 110;
 }
-
-#dj-flavien-b {
+#dj-13 {
   position: absolute;
   top: 495px;
   left: 530px;
   width: 125px;
+  height: 182px;
   z-index: 905;
 }
-
-#dj-fkj {
+#dj-14 {
   position: absolute;
   top: 530px;
   left: 340px;
-  z-index: 35;
   width: 230px;
+  height: 139px;
+  z-index: 35;
 }
-
-#dj-todd-t {
+#dj-15 {
   position: absolute;
   top: 450px;
   left: 340px;
   width: 140px;
+  height: 88px;
   z-index: 860;
 }
-
-#dj-jean-t {
+#dj-16 {
   position: absolute;
   top: 353px;
   left: 440px;
   width: 140px;
+  height: 185px;
   z-index: 10;
 }
-
-#dj-palms-t {
+#dj-17 {
   position: absolute;
   top: 270px;
   left: 430px;
   width: 140px;
+  height: 96px;
   z-index: 900;
 }
-
-#dj-papooz {
+#dj-18 {
   position: absolute;
   top: 140px;
   left: 490px;
+  width: 165px;
+  height: 165px;
   z-index: 850;
 }
-
-#dj-lewis-o {
+#dj-19 {
   position: absolute;
   top: 30px;
   left: 540px;
   width: 120px;
+  height: 120px;
   z-index: 960;
 }
-
-#dj-peggy-g {
+#dj-20 {
   position: absolute;
   top: 290px;
   left: 565px;
+  width: 165px;
+  height: 165px;
 }
-
-#dj-venice-c {
+#dj-21 {
   position: absolute;
-  top: 40px;
-  left: 630px;
-  width: 250px;
+  top: 480px;
+  left: 665px;
+  width: 185px;
+  height: 125px;
 }
-
-
 #dj-fourtet {
   position: absolute;
-  top: 540px;
-  left: 640px;
-  width: 180px;
-  z-index: 970;
 }
-
-#dj-claptone {
+#dj-marc-r {
   position: absolute;
-  top: 525px;
-  left: 800px;
-  width: 220px;
-  z-index: 960;
-
 }
-
+#dj-imperatrice {
+  position: absolute;
+}
 #dj-moby {
   position: absolute;
-  top: 190px;
-  left: 650px;
-  width: 100px;
 }
-
