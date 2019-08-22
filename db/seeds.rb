@@ -412,7 +412,7 @@ user.save!
   users = Users.all.map {|user| user.user_id} - djs
   (1..5).each do
     booking = Booking.new(name: Faker::TvShows::SiliconValley.company, date: DateTime.now, location: location_list.sample, set_length: 2)
-    booking.user = Users.find(users.sample)
+    booking.user = User.find(users.sample)
     booking.dj_profile = DjProfile.find(djs.sample)
     booking.validated = true
     booking.save!
