@@ -1,6 +1,51 @@
 .djdetails {
-  margin-top: 30px;
+  margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 16px;
+}
+
+.form-section {
+ background-color: $fyre-blue;
+ display: flex;
+ justify-content: center;
+ width: 100vw;
+ position: relative;
+}
+
+ #booking-btn {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+a#booking-btn {
+  font-size: 24px;
+}
+
+.fa-soundcloud {
+  font-size: 50px;
+  color: $fyre-orange;
+  transition: 0.3s;
+}
+
+.fa-soundcloud:hover {
+  color: $fyre-darker-orange;
+  transform: scale(1.1);
+}
+
+.fixed {
+}
+
+.dj-name {
+  margin-bottom: 10px;
+  font-size: 60px;
+}
+
+.fa-times-circle {
+  color: $fyre-platinium;
+  font-size: 30px;
+  position: absolute;
+  left: 30px;
+  top: 30px;
+
 }

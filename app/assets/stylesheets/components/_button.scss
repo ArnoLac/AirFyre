@@ -29,6 +29,7 @@ a.validated {
 }
 
 .btn-ghost-orange {
+
   color: $fyre-platinium;
   background-color: $fyre-orange;
   border: none;
@@ -39,9 +40,11 @@ a.validated {
 
 a.btn-ghost-orange {
   text-decoration: none;
+  color: $fyre-platinium;
 }
 
 .btn-ghost-orange:hover {
   // opacity: 0.8;
   background-color: $fyre-darker-orange;
+  color: $fyre-platinium !important;
 }

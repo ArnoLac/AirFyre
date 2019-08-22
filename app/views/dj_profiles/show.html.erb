@@ -1,59 +1,59 @@
 
-  <div class="container mt-5">
+  <div class="container">
 
-    <div>
-    <%= link_to "< Go Back to all Djs", dj_profiles_path %>
-    </div>
     <div class="djdetails">
 
-      <div class="bio-card">
+      <!-- Left card -->
+      <div class="dj-card" id="bio">
         <h3>BIO</h3>
         <p><%= @dj_profile.bio %></p>
 
-        <p style="font-weight:500">Listen to <%= @dj_profile.stage_name%> on Soundcloud</p>
+        <p class="mt-4" style="font-weight:500">Listen to <%= @dj_profile.stage_name%> on Soundcloud</p>
         <%= link_to (@dj_profile.social_media) do %>
-          <i class="fab fa-soundcloud" style="font-size: 40px; color:$fyre-dark-blue"></i></p>
+          <i class="fab fa-soundcloud"></i></p>
           <% end %>
       </div>
 
-      <div class="pic-name-rating-card">
+      <!-- Central card -->
+      <div class="dj-card">
 
-      <% if @dj_profile.user.photo.file.nil? %>
-        <%= image_tag "https://www.residentadvisor.net/images/profiles/breitlitz.jpg", alt: @dj_profile.stage_name, class:"avatar-large" %>
-      <% else %>
-        <%= cl_image_tag @dj_profile.user.photo, alt: @dj_profile.stage_name, class:"avatar-large" %>
-      <% end %>
+        <% if @dj_profile.user.photo.file.nil? %>
+          <%= image_tag "https://www.residentadvisor.net/images/profiles/breitlitz.jpg", alt: @dj_profile.stage_name, class:"avatar-large" %>
+        <% else %>
+          <%= cl_image_tag @dj_profile.user.photo, alt: @dj_profile.stage_name, class:"avatar-large" %>
+        <% end %>
 
+        <h1 class="dj-name"><%= @dj_profile.stage_name %></h1>
 
-        <h1><%= @dj_profile.stage_name %></h1>
+        <%#= link_to "BOOK THE ARTIST", "#collapseExample", class:"btn-ghost-orange mt-3", id:"booking-btn"  %>
+        <a href="#collapseExample" data-scroll class="btn-ghost-orange mt-3" id="booking-btn">BOOK THE ARTIST</a>
 
         <p>This DJ plays</p>
-          <span class="genres">
+          <div class="genres">
           <% @dj_profile.genres.each do |genre| %>
-          <%= link_to genre, genre_path(genre), class:"genre-name"  %>
+          <div  class="genre-name">  <%= link_to genre, genre_path(genre), class:"genre-name"  %></div>
             <% end %>
-          </span>
+          </div>
         </p>
 
-        <p class="mt-3">Average Fyre rating</p>
-        <p>
-          <% @dj_profile.avg_rating.round.times do %>
-            <i class="fas fa-fire" style="color:#394154"></i>
-          <% end %>
-            <% (5-@dj_profile.avg_rating.round).times do %>
-            <i class="fas fa-fire"></i>
-          <% end %>
+          <p class="mt-3">Average Fyre rating</p>
+             <div>
+              <% @dj_profile.avg_rating.round.times do %>
+                <i class="fas fa-fire" style="color:#BC5100; font-size:30px;"></i>
+              <% end %>
+                <% (5-@dj_profile.avg_rating.round).times do %>
+                <i class="fas fa-fire" style="color:#E5E5E5; font-size:30px;"></i>
+              <% end %>
+            </div>
+          <p class="reviews-count">out of <%= @dj_profile.reviews.count %> review(s)</p>
 
-        </p>
-        <p class="reviews-count">out of <%= @dj_profile.reviews.count %> review(s)</p>
 
-        <%= link_to "BOOK THE ARTIST", "#collapseExample", class:"btn-ghost mt-3", id:"booking-btn"  %>
 
       </div>
 
-
+      <!-- Right card -->
       <!-- We need to show all past bookings before validation -->
-      <div class="dj-events-card">
+      <div class="dj-card">
         <h3 class="mb-0"><%= @dj_profile.stage_name %>'s</h3>
         <h3>PAST EVENTS</h3>
 
@@ -66,38 +66,41 @@
               </p>
             <% end %>
           <% end %>
-
       </div>
-
-
     </div>
+  </div>
+
+    <!-- Form for booking -->
+    <div class="form-section" id="collapseExample">
       <div class="d-none", id="dj-booking-form">
+      <i class="far fa-times-circle" id="remove-btn"> <a href="#bio"></a></i>
       <%= render 'bookings/form' %>
       </div>
+    </div>
 
-    <div class="review-card">
-
+    <!-- Reviews -->
+    <div class="dj-card mt-4">
       <h3><%= @dj_profile.stage_name %>'s reviews</h3>
 
         <% @dj_profile.reviews.each do |review| %>
         <div class="indiv-review">
-          <p style="font-weight:500">Placeholder Jean-Michel <%= review.booking.user.username %> -
+          <p style="font-weight:500"><%= review.booking.user.username %> -
           <% review.fyre_stars.times do %>
-            <i class="fas fa-fire" style="color:white"></i>
+            <i class="fas fa-fire" style="color:#BC5100; font-size:16px"></i>
             <% end %>
             <% (5-review.fyre_stars).times do %>
-            <i class="fas fa-fire" style="color:grey"></i>
+            <i class="fas fa-fire" style="color:#E5E5E5; font-size:16px"></i>
             <% end %>
           </p>
           <p class="comment">"<%= review.comment %>"</p>
         </div>
-          <p>Comment left on <span><%= Date::MONTHNAMES[review.booking.date.month] %></span> <span> <%= review.booking.date.year%></span></p>
+          <p style="font-size:10px;">Comment left on <span><%= Date::MONTHNAMES[review.booking.date.month] %></span> <span class="date"> <%= review.booking.date.year%></span></p>
         <% end %>
     </div>
 
-    </div>
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
 
-  </div>
-
-
+<script>
+  var scroll = new SmoothScroll('a[href*="#"]');
+</script>
 

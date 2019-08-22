@@ -1,4 +1,4 @@
-<div class="container">
+<div class="dj-card">
   <%= simple_form_for(@booking) do |b| %>
     <%= b.error_notification %>
     <%= b.error_notification message: b.object.errors[:base].to_sentence if b.object.errors[:base].present? %>
@@ -12,7 +12,7 @@
     </div>
 
     <div class="form-actions">
-      <%= b.button :submit, class:"btn-ghost ml-4 mt-4" %>
+      <%= b.button :submit, class:"btn-ghost-orange ml-4 mt-4" %>
     </div>
   <% end %>
 </div>
