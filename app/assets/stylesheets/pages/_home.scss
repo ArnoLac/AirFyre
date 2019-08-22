@@ -11,7 +11,6 @@
   border: 5px solid $fyre-platinium;
   border-radius: 5px;
   box-shadow: 2px -4px 16px -6px rgba(0,0,0,0.72);
-
 }
 
 .style-card:hover {
@@ -30,63 +29,22 @@
   right: 50px;
 }
 
-#dj-nina-k {
+#dj-1 {
   position: absolute;
-  top: 80px;
-  left: 105px;
-  z-index: 100;
+  top: 205px;
+  left: 210px;
+  width: 150px;
+  z-index: 1;
 }
 
-#dj-daft-p {
-  position: absolute;
-  top: 60px;
-  left: 240px;
-  z-index: 150;
-}
-
-#dj-laurent-g {
-  position: absolute;
-  top: 180px;
-  left: 55px;
-  z-index: 90;
-}
-
-#dj-hunee {
-  position: absolute;
-  top: 250px;
-  left: 40px;
-  z-index: 85;
-}
-
-#dj-imperatrice {
-  position: absolute;
-  top: 450px;
-  left: 60px;
-  z-index: 100;
-}
-
-#dj-parcels {
-  position: absolute;
-  top: 155px;
-  left: 195px;
-  z-index: 60;
-}
-
-#dj-justice {
-  position: absolute;
-  top: 40px;
-  left: 390px;
-  z-index: 155;
-}
-
-#dj-auntie-f {
+#dj-2 {
   position: absolute;
   top: 150px;
   left: 340px;
   z-index: 850;
 }
 
-#dj-daniel-a {
+#dj-3 {
   position: absolute;
   top: 300px;
   left: 330px;
@@ -94,14 +52,14 @@
   z-index: 860;
 }
 
-#dj-breakbot {
+#dj-4 {
   position: absolute;
   top: 350px;
   left: 185px;
   z-index: 65;
 }
 
-#dj-solomun {
+#dj-5 {
   position: absolute;
   top: 560px;
   left: 225px;
@@ -109,23 +67,15 @@
   z-index: 65;
 }
 
-#dj-marc-r {
-  position: absolute;
-  top: 540px;
-  left: 145px;
-  z-index: 110;
-  width: 90px;
-}
-
-#dj-flavien-b {
+#dj-6 {
   position: absolute;
   top: 495px;
   left: 530px;
-  width: 125px;
+  width: 100px;
   z-index: 905;
 }
 
-#dj-fkj {
+#dj-7 {
   position: absolute;
   top: 530px;
   left: 340px;
@@ -133,7 +83,7 @@
   width: 230px;
 }
 
-#dj-todd-t {
+#dj-8 {
   position: absolute;
   top: 450px;
   left: 340px;
@@ -141,7 +91,7 @@
   z-index: 860;
 }
 
-#dj-jean-t {
+#dj-9 {
   position: absolute;
   top: 353px;
   left: 440px;
@@ -149,7 +99,7 @@
   z-index: 10;
 }
 
-#dj-palms-t {
+#dj-10 {
   position: absolute;
   top: 270px;
   left: 430px;
@@ -157,56 +107,101 @@
   z-index: 900;
 }
 
-#dj-papooz {
+#dj-11 {
   position: absolute;
   top: 140px;
   left: 490px;
   z-index: 850;
 }
 
-#dj-lewis-o {
+#dj-12 {
   position: absolute;
-  top: 30px;
-  left: 540px;
-  width: 120px;
-  z-index: 960;
-}
-
-#dj-peggy-g {
-  position: absolute;
-  top: 290px;
+  top: 280px;
   left: 565px;
 }
 
-#dj-venice-c {
+#dj-13 {
   position: absolute;
-  top: 480px;
-  left: 665px;
+  top: 400px;
+  left: 560px;
   width: 185px;
 }
 
-
-#dj-fourtet {
+#dj-14 {
   position: absolute;
+  top: 80px;
+  left: 105px;
+  z-index: 100;
+}
 
+#dj-15 {
+  position: absolute;
+  top: 60px;
+  left: 240px;
+  z-index: 150;
+}
+
+#dj-16 {
+  position: absolute;
+  top: 180px;
+  left: 55px;
+  z-index: 90;
+}
+
+#dj-17 {
+  position: absolute;
+  top: 250px;
+  left: 40px;
+  z-index: 85;
+}
+
+#dj-18 {
+  position: absolute;
+  top: 450px;
+  left: 60px;
+  z-index: 100;
+}
+
+#dj-19 {
+  position: absolute;
+  top: 155px;
+  left: 195px;
+  z-index: 60;
+}
+
+#dj-20 {
+  position: absolute;
+  top: 40px;
+  left: 390px;
+  z-index: 155;
 }
 
 
-
-#dj-marc-r {
+#dj-21 {
   position: absolute;
-
+  top: 540px;
+  left: 145px;
+  z-index: 110;
+  width: 90px;
 }
 
 
-#dj-imperatrice {
-  position: absolute;
+// #dj-fourtet {
+//   position: absolute;
 
-}
+// }
 
 
-#dj-moby {
-  position: absolute;
 
-}
+// #dj-marc-r {
+//   position: absolute;
+
+// }
+
+
+
+// #dj-moby {
+//   position: absolute;
+
+// }
 
