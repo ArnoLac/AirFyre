@@ -1,4 +1,9 @@
-<%= simple_form_for(@user) do |f| %>
-  <%= f.input :username %>
-  <%= f.button :submit, "Change username" %>
-<% end %>
+<div id="admin-container">
+  <div id="admin-form">
+    <%= simple_form_for(@user) do |f| %>
+      <%= f.input :username %>
+      <%= f.button :submit, "Change username", class: "btn-ghost-orange" %>
+    <% end %>
+  </div>
+</div>
+
