@@ -273,32 +273,12 @@ dj.genres = ["Disco"]
 dj.user = user
 dj.save!
 
-
-
-#random bookings
-(1..22).each do |x|
-  location_list = ["Paris", "Berlin", "Rotterdam", "Kiev", "Tourcoing", "Limoges"]
-  y = User.first.id - 1
-  z = DjProfile.first.id - 1
-  (1..5).each do
-    booking = Booking.new(name: Faker::TvShows::SiliconValley.company, date: DateTime.now, location: location_list.sample, set_length: 2)
-    booking.user = User.find(y + x)
-    booking.dj_profile = DjProfile.find(z + x)
-    booking.validated = true
-    booking.save!
-  end
+#Random Users
+(1..20).each do
+  user = User.new(email: Faker::Internet.email, password: "azerty")
+  user.username = Faker::Name.name
+  user.save!
 end
-
-#random reviews
-(1..110).each do |x|
-  stars = [1,2,3,4,5]
-  comments = ["Crazy set!", "Amazing performance", "Very professionnal", "Not that great", "Did not show up.."]
-  b = Booking.first.id-1
-  review = Review.new(fyre_stars: 4, comment: comments.sample)
-  review.booking = Booking.find(b + x)
-  review.save!
-end
-
 
 #User for demo
 url = "https://avatars1.githubusercontent.com/u/51454685?s=460&v=4"
@@ -306,3 +286,27 @@ user = User.new(email: "lena@gmail.com", password: "azerty")
 user.username = "Lena"
 user.remote_photo_url = url
 user.save!
+
+#random bookings
+(1..22).each do
+  location_list = ["Paris", "Berlin", "Rotterdam", "Kiev", "Tourcoing", "Limoges"]
+  djs = DjProfile.all.map {|user| user.user_id}
+  users = Users.all.map {|user| user.user_id} - djs
+  (1..5).each do
+    booking = Booking.new(name: Faker::TvShows::SiliconValley.company, date: DateTime.now, location: location_list.sample, set_length: 2)
+    booking.user = Users.find(users.sample)
+    booking.dj_profile = DjProfile.find(djs.sample)
+    booking.validated = true
+    booking.save!
+  end
+end
+
+#random reviews
+(1..110).each do |x|
+  b = Booking.first.id-1
+  comments = [["Crazy set!", 5], ["Amazing performance", 5], ["Very professionnal", 4], ["Not that great", 3], ["Did not show up..", 1]]
+  selection = comments.sample
+  review = Review.new(fyre_stars: selection[1], comment: selection[0])
+  review.booking = Booking.find(b + x)
+  review.save!
+end
