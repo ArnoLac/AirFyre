@@ -4,30 +4,44 @@ DjProfile.destroy_all
 User.destroy_all
 
 #random users
-(1..10).each do
-  url = "https://www.pwfm.fr/uploads/artwork540.jpg"
-  user = User.new(email: Faker::Internet.email, password: "azerty")
-  user.username = Faker::Name.name
-  user.remote_photo_url = url
-  user.save!
-end
+# (1..10).each do
+#   url = "https://www.pwfm.fr/uploads/artwork540.jpg"
+#   user = User.new(email: Faker::Internet.email, password: "azerty")
+#   user.username = Faker::Name.name
+#   user.remote_photo_url = url
+#   user.save!
+# end
 
-#User for demo
-url = "https://avatars1.githubusercontent.com/u/51454685?s=460&v=4"
-user = User.new(email: "lena@gmail.com", password: "azerty")
-user.username = "Lena"
-user.remote_photo_url = url
-user.save!
 
 #random djs
-(1..10).each do |x|
-  y = User.first.id - 1
-  soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
-  dj = DjProfile.new(stage_name: Faker::Artist.name, bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-  dj.genres = DjProfile.genres.sample(10)
-  dj.user = User.find(y + x)
-  dj.save!
-end
+# (1..10).each do |x|
+#   y = User.first.id - 1
+#   soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
+#   dj = DjProfile.new(stage_name: Faker::Artist.name, bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
+#   dj.genres = DjProfile.genres.sample(10)
+#   dj.user = User.find(y + x)
+#   dj.save!
+# end
+
+
+
+url = "images_landing_page/nina_krav.jpg"
+user = User.new(email: "g@gmail.com", password: "azerty")
+user.username = "G"
+user.remote_photo_url = url
+user.save!
+# soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
+dj = DjProfile.new(stage_name: "G the man", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
+dj.genres = ["Disco"]
+dj.user = user
+dj.save!
+
+
+
+
+
+
+
 
 #DJ for demo
 url = "https://www.pwfm.fr/uploads/artwork540.jpg"
@@ -41,8 +55,10 @@ dj.genres = ["Disco"]
 dj.user = user
 dj.save!
 
+
+
 #random bookings
-(1..11).each do |x|
+(1..22).each do |x|
   location_list = ["Paris", "Berlin", "Rotterdam", "Kiev", "Tourcoing", "Limoges"]
   y = User.first.id - 1
   z = DjProfile.first.id - 1
@@ -56,7 +72,7 @@ dj.save!
 end
 
 #random reviews
-(1..55).each do |x|
+(1..110).each do |x|
   stars = [1,2,3,4,5]
   comments = ["Crazy set!", "Amazing performance", "Very professionnal", "Not that great", "Did not show up.."]
   b = Booking.first.id-1
@@ -64,3 +80,11 @@ end
   review.booking = Booking.find(b + x)
   review.save!
 end
+
+
+#User for demo
+url = "https://avatars1.githubusercontent.com/u/51454685?s=460&v=4"
+user = User.new(email: "lena@gmail.com", password: "azerty")
+user.username = "Lena"
+user.remote_photo_url = url
+user.save!
