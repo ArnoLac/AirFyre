@@ -1,6 +1,6 @@
 .cadre-dj {
   position: relative;
-  background-color: #d9d9d9ff;
+  // background-color: #d9d9d9ff;
   height: 100vh;
   img {
     width: 165px;
@@ -8,7 +8,7 @@
 }
 
 .style-card {
-  border: 5px solid black;
+  border: 5px solid $fyre-platinium;
   border-radius: 5px;
   box-shadow: 2px -4px 16px -6px rgba(0,0,0,0.72);
 
