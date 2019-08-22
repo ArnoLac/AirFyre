@@ -13,6 +13,11 @@
   border: 5px solid $fyre-platinium;
   border-radius: 5px;
   box-shadow: 2px -4px 16px -6px rgba(0,0,0,0.72);
+  display: flex;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
 }
 .style-card:hover {
   transform: scale(1.1);
