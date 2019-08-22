@@ -1,20 +1,21 @@
 <div class="cadre-dj">
 
-  <div class="buttons-clickables">
-    <div class="all-dj-btn">
-      <%= link_to 'All our DJs', dj_profiles_path, class: "btn btn-secondary" %>
-    </div>
+  <div class="all-dj-btn">
+    <%= link_to 'All our DJs', dj_profiles_path, class: "btn btn-secondary" %>
+  </div>
 
-    <div class="dropdown">
-      <!-- <h5>What kind of music do you like ?</h5> -->
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Chose your genre
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <%  DjProfile.genres.each do |genre| %>
-        <%= link_to genre, genre_path(genre), class:"dropdown-item"  %>
-        <% end %>
-      </div>
+
+  <div class="dropdown">
+  <h1 style="color:#E5E5E5">Hello FYRE !</h1>
+  <h2>Bring FYRE to your venues</h2>
+    <h5>What kind of music do you like ?</h5>
+    <button class="btn-ghost-orange dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Chose your genre
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <%  DjProfile.genres.each do |genre| %>
+      <%= link_to genre, genre_path(genre), class:"dropdown-item"  %>
+      <% end %>
     </div>
   </div>
 
