@@ -19,17 +19,21 @@
     </div>
   </div>
 
+
   <% @dj_profiles.each_with_index do |profile, index| %>
     <div>
       <% if profile.user.photo? %>
         <%= cl_image_tag profile.user.photo, :class => "style-card", :id => "dj-#{index + 1}" %>
       <% else %>
         <%= image_tag "images_landing_page/lewis-ofman.jpg", :class => "style-card", :id => "dj-#{index + 1}" %>
-
       <% end %>
     </div>
-
   <% end %>
+
+
+  <!-- <div>
+    <%#= image_tag "images_landing_page/nina_krav.jpg", :class => "style-card", :id => "dj-nina-k" %>
+  </div> -->
  <!--  <div>
     <%#= image_tag "images_landing_page/nina_krav.jpg", :class => "style-card", :id => "dj-nina-k" %>
   </div> -->
@@ -110,12 +114,25 @@
   </div>
 
   <div>
-    <%#= image_tag "images_landing_page/fourtet.png", :class => "style-card", :id => "dj-fourtet" %>
+    <%#= image_tag "images_landing_page/fourtet.jpg", :class => "style-card", :id => "dj-fourtet" %>
   </div>
 
   <div>
+<<<<<<< HEAD
     <%#= image_tag "images_landing_page/moby.jpg", :class => "style-card", :id => "dj-moby" %>
   </div> -->
+
+    <%#= image_tag "images_landing_page/claptone.jpg", :class => "style-card", :id => "dj-claptone" %>
+  <!-- </div> -->
+
+  <!-- <div> -->
+    <%#= image_tag "images_landing_page/moby.jpg", :class => "style-card", :id => "dj-moby" %>
+  <!-- </div> -->
+
+<!--   <div>
+    <%#= image_tag "images_landing_page/detroit-swindle.jpg", :class => "style-card", :id => "dj-detroit-s" %>
+  </div> -->
+
 </div>
 
 

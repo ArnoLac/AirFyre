@@ -17,19 +17,31 @@
   transform: scale(1.1);
 }
 
+
+.buttons-clickables {
+  position: absolute;
+  top: 330px;
+  right: 250px;
+}
+
 .all-dj-btn {
-  position: absolute;
-  top: 200px;
-  right: 260px;
+  padding: 25px;
+//   position: absolute;
+//   top: 200px;
+//   right: 260px;
 }
 
-.dropdown {
-  position: absolute;
-  top: 290px;
-  right: 50px;
-}
-
+<<<<<<< HEAD
 #dj-1 {
+=======
+// .dropdown {
+//   position: absolute;
+//   top: 290px;
+//   right: 50px;
+// }
+
+#dj-nina-k {
+>>>>>>> master
   position: absolute;
   top: 205px;
   left: 210px;
@@ -122,9 +134,15 @@
 
 #dj-13 {
   position: absolute;
+<<<<<<< HEAD
   top: 400px;
   left: 560px;
   width: 185px;
+=======
+  top: 40px;
+  left: 630px;
+  width: 250px;
+>>>>>>> master
 }
 
 #dj-14 {
@@ -136,6 +154,7 @@
 
 #dj-15 {
   position: absolute;
+<<<<<<< HEAD
   top: 60px;
   left: 240px;
   z-index: 150;
@@ -204,4 +223,27 @@
 //   position: absolute;
 
 // }
+=======
+  top: 540px;
+  left: 640px;
+  width: 180px;
+  z-index: 970;
+}
+
+#dj-claptone {
+  position: absolute;
+  top: 525px;
+  left: 800px;
+  width: 220px;
+  z-index: 960;
+
+}
+
+#dj-moby {
+  position: absolute;
+  top: 190px;
+  left: 650px;
+  width: 100px;
+}
+>>>>>>> master
 

@@ -31,8 +31,8 @@ a.validated {
 .btn-ghost-orange {
   color: $fyre-platinium;
   background-color: $fyre-orange;
-  border: 1px solid $fyre-orange;
-  padding: 8px 24px;
+  border: none;
+  padding: 9px 24px;
   border-radius: 50px;
   transition: background-color 0.3s ease;
 }
