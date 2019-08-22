@@ -19,6 +19,7 @@
   background-repeat: no-repeat;
 
 }
+
 .style-card:hover {
   transform: scale(1.1);
 }
@@ -29,8 +30,19 @@
 }
 .dropdown {
   position: absolute;
-  top: 290px;
+  margin-right: 165px;
+  top: 250px;
   right: 50px;
+  margin-left: none;
+  h1 {
+    color: $fyre-platinium;
+    margin-bottom: 15px;
+    font-size: 45px;
+  }
+  h5 {
+    color: $fyre-platinium;
+    margin-bottom: 30px;
+  }
 }
 #dj-1 {
   position: absolute;
