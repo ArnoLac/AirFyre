@@ -409,7 +409,7 @@ user.save!
 (1..22).each do
   location_list = ["Paris", "Berlin", "Rotterdam", "Kiev", "Tourcoing", "Limoges"]
   djs = DjProfile.all.map {|user| user.user_id}
-  users = Users.all.map {|user| user.user_id} - djs
+  users = User.all.map {|user| user.user_id} - djs
   (1..5).each do
     booking = Booking.new(name: Faker::TvShows::SiliconValley.company, date: DateTime.now, location: location_list.sample, set_length: 2)
     booking.user = User.find(users.sample)
