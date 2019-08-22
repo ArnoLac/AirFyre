@@ -14,4 +14,8 @@ class DjProfile < ApplicationRecord
   def self.genres
     GENRES
   end
+
+  def avg_rating
+    self.reviews.map { |r| r.fyre_stars }.reduce(:+) / self.reviews.count
+  end
 end
