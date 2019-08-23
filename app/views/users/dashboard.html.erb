@@ -58,11 +58,10 @@
       <!-- Past booking -->
     <% if booking.date < Date.today %>
       <h6 class="past">Event completed</h6><h5 style="margin: 0; color: #E5E5E5"><%= booking.name %>, <%= booking.location %> | <%= Date::MONTHNAMES[booking.date.month] %>
-      <%= booking.date.year%></h5>
+      <%= booking.date.year%> with <%= booking.dj_profile.stage_name %> </h5>
     <% else %>
     <h5 style="margin: 0; color: #E5E5E5"><%= booking.name %>, <%= booking.location %> | <%= Date::MONTHNAMES[booking.date.month] %>
-
-      <%= booking.date.year%></h5>
+      <%= booking.date.year%> with <%= booking.dj_profile.stage_name %></h5>
       <% end %>
     <div class="booking-status">
       <!-- Booking pending -->
