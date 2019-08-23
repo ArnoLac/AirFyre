@@ -36,16 +36,21 @@
           </div>
         </p>
 
-          <p class="mt-3">Average Fyre rating</p>
-             <div>
-              <% @dj_profile.avg_rating.round.times do %>
-                <i class="fas fa-fire" style="color:#BC5100; font-size:30px;"></i>
+             <div class="mt-3">
+              <% if @dj_profile.reviews.blank?  %>
+              <p>This DJ has not been rated yet.</p>
+              <% else %>
+                <p>Average Fyre rating</p>
+                <% @dj_profile.avg_rating.round.times do %>
+                  <i class="fas fa-fire" style="color:#BC5100; font-size:30px;"></i>
+                <% end %>
+                  <% (5-@dj_profile.avg_rating.round).times do %>
+                  <i class="fas fa-fire" style="color:#E5E5E5; font-size:30px;"></i>
+                <% end %>
+                <p class="reviews-count">out of <%= @dj_profile.reviews.count %> review(s)</p>
               <% end %>
-                <% (5-@dj_profile.avg_rating.round).times do %>
-                <i class="fas fa-fire" style="color:#E5E5E5; font-size:30px;"></i>
-              <% end %>
+
             </div>
-          <p class="reviews-count">out of <%= @dj_profile.reviews.count %> review(s)</p>
 
 
 
@@ -80,6 +85,8 @@
 
     <!-- Reviews -->
     <div class="dj-card mt-4">
+      <% if @dj_profile.reviews.blank?  %>
+      <% else %>
       <h3><%= @dj_profile.stage_name %>'s reviews</h3>
 
         <% @dj_profile.reviews.each do |review| %>
@@ -96,6 +103,7 @@
         </div>
           <p style="font-size:10px;">Comment left on <span><%= Date::MONTHNAMES[review.booking.date.month] %></span> <span class="date"> <%= review.booking.date.year%></span></p>
         <% end %>
+      <% end %>
     </div>
 
 <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
