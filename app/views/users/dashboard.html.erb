@@ -20,46 +20,73 @@
   </div>
 </div>
 
+<!-- DJ Dash-->
 <% if DjProfile.find_by(user_id: @user.id) %>
 <div class="dashboard-card">
   <h3 style="margin-bottom: 30px">My Bookings as DJ</h3>
   <% @bookings_dj.each do |booking| %>
     <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 15px">
-      <h5 style="margin: 0; color: #E5E5E5"><%= booking.name %>, <%= booking.location %> | <%= Date::MONTHNAMES[booking.date.month] %> <%= booking.date.year%></h5>
-      <div>
+      <% if booking.date < Date.today %>
+        <h6 class="past">Event completed</h6><h5 style="margin: 0; color: #E5E5E5"><%= booking.name %>, <%= booking.location %> | <%= Date::MONTHNAMES[booking.date.month] %>
+        <%= booking.date.year%></h5>
+    <% else %>
+      <h5 style="margin: 0; color: #E5E5E5"><%= booking.name %>, <%= booking.location %> | <%= Date::MONTHNAMES[booking.date.month] %>
+        <%= booking.date.year%></h5>
+    <% end %>
         <% if booking.validated == false %>
           <%= simple_form_for(booking) do |f| %>
             <%= f.input :validated, as: :hidden, input_html: { value: true } %>
             <%= f.button :submit, "Accept Booking",class: "btn-ghost-orange" %>
           <% end %>
         <% else %>
-          <h6 style="color: green">Validated</h6>
+          <h6 class="validated">Validated</h6>
         <% end %>
       </div>
     </div>
   <% end %>
 </div>
-<% else %>
+<% end %>
+
+
+<!-- User Dash-->
+
 <div class="dashboard-card">
   <h3 style="margin-bottom: 30px">My Bookings as Promoter</h3>
   <% @bookings_user.each do |booking| %>
   <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 15px">
+
+      <!-- Past booking -->
+    <% if booking.date < Date.today %>
+      <h6 class="past">Event completed</h6><h5 style="margin: 0; color: #E5E5E5"><%= booking.name %>, <%= booking.location %> | <%= Date::MONTHNAMES[booking.date.month] %>
+      <%= booking.date.year%></h5>
+    <% else %>
     <h5 style="margin: 0; color: #E5E5E5"><%= booking.name %>, <%= booking.location %> | <%= Date::MONTHNAMES[booking.date.month] %>
-      <%= booking.date.year%> with <%= booking.dj_profile.stage_name%> </h5>
-    <div>
+
+      <%= booking.date.year%></h5>
+      <% end %>
+    <div class="booking-status">
+      <!-- Booking pending -->
       <% if booking.validated == false %>
-      <div class="d-flex align-items-center">
-        <h6 style="color:orange; margin-bottom:0px; margin-right:10px">Pending</h6>
-        <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, booking_path(booking), method: :delete, data: {confirm: "Are you sure ?"} %>
-      </div>
+      <h6 class="pending">Pending</h6>
+      <!-- Booking accepted and party has happened-->
+      <% elsif booking.date < Date.today %>
+          <!-- If the user has not rated the set, they can do it-->
+          <% if booking.reviews.nil? %>
+            <h6 class="validated">Validated</h6> <%= link_to 'Rate this set', new_booking_review_path(booking) %>
+          <!-- If the user has already rated the set, no rating button-->
+          <% else %>
+            <h6 class="validated">Validated</h6> <h6 class="past">Rated. Thanks!</h6>
+          <% end %>
+
       <% else %>
-      <h6 style="color:green" style="margin: 0">Validated</h6>
+      <!-- Booking accepted party has not happened yet-->
+        <h6 class="validated">Validated</h6>
       <% end %>
     </div>
   </div>
   <% end %>
 </div>
-<% end %>
+
 
 
 <div class="dashboard-card">

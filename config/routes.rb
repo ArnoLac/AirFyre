@@ -9,8 +9,9 @@ Rails.application.routes.draw do
 
   resources :dj_profiles
 
-  resources :bookings
+  resources :bookings do
+    resources :reviews, only: [:new, :create]
+  end
 
-  resources :reviews, only: [:new, :create]
 end
 

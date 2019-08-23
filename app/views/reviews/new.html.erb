@@ -1,6 +1,7 @@
 <div class="add-review">
-  <h2>Leave a review</h2>
-  <%= simple_form_for [@dj_profile, @review] do |f| %>
+  <h2>Leave a review for <%= @booking.dj_profile.user.username %></h2>
+  <p> <%= @booking.dj_profile.user.username %> played on <%= Date::MONTHNAMES[@booking.date.month] %>, <%= @booking.date.day%>  <%= @booking.date.year%> at <%= @booking.name %>. Kindly leave us a comment to rate her set! <i class="fas fa-fire"></i></p>
+  <%= simple_form_for [@booking, @review] do |f| %>
     <%= f.input :comment %>
     <%= f.input :fyre_stars %>
     <%= f.submit "add a review", class: "btn btn-primary" %>
