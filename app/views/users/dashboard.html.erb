@@ -65,6 +65,7 @@
 <div class="dashboard-card">
   <h3 style="margin-bottom: 30px">My Bookings as Promoter</h3>
 
+
   <tr>
     <% @bookings_user.each do |booking| %>
     <div class="d-flex align-items-center justify-content-between" style="margin-bottom: 15px">
@@ -102,6 +103,7 @@
 
           <% elsif booking.reviews.length == 1%>
               <h6 class="past">Rated. Thanks!</h6>
+
           <% else %>
             <p> </p>
           <% end %>
