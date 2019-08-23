@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :dj_profile
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 
   validates :name, presence: true
   validates :date, presence: true

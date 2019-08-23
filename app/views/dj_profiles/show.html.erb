@@ -9,7 +9,7 @@
         <p><%= @dj_profile.bio %></p>
 
         <p class="mt-4" style="font-weight:500">Listen to <%= @dj_profile.stage_name%> on Soundcloud</p>
-        <%= link_to (@dj_profile.social_media) do %>
+        <%= link_to (@dj_profile.social_media), target: :_blank do %>
           <i class="fab fa-soundcloud"></i></p>
           <% end %>
       </div>

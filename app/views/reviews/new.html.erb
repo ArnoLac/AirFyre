@@ -1,9 +1,18 @@
 <div class="add-review">
-  <h2>Leave a review for <%= @booking.dj_profile.user.username %></h2>
-  <p> <%= @booking.dj_profile.user.username %> played on <%= Date::MONTHNAMES[@booking.date.month] %>, <%= @booking.date.day%>  <%= @booking.date.year%> at <%= @booking.name %>. Kindly leave us a comment to rate her set! <i class="fas fa-fire"></i></p>
-  <%= simple_form_for [@booking, @review] do |f| %>
-    <%= f.input :comment %>
-    <%= f.input :fyre_stars %>
-    <%= f.submit "add a review", class: "btn btn-primary" %>
-  <% end %>
+  <div class="d-flex justify-content-center">
+    <h2>Leave a review for <%= @booking.dj_profile.user.username %></h2>
+    <p> <%= @booking.dj_profile.user.username %> played on <%= Date::MONTHNAMES[@booking.date.month] %>, <%= @booking.date.day%>  <%= @booking.date.year%> at <%= @booking.name %>. Kindly leave us a comment to rate her set! <i class="fas fa-fire"></i></p>
+  </div>
+
+  <div class="d-flex justify-content-center" id="admin-container">
+    <div class="col-sm-6 col-lg-4" id="admin-form">
+      <%= simple_form_for [@booking, @review] do |f| %>
+        <%= f.input :comment %>
+        <%= f.input :fyre_stars %>
+        <div class="d-flex justify-content-around">
+          <%= f.submit "Leave a review", class: "btn-ghost-orange" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

@@ -28,7 +28,7 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.update(booking_params)
-      redirect_to dj_profile_path(@booking.dj_profile), notice: 'Your booking request has been updated succesfully'
+      redirect_to dashboard_path(current_user), notice: 'Your booking request has been updated succesfully'
     else
       render :edit
     end
