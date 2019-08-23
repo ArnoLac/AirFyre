@@ -1,7 +1,7 @@
 .cadre-dj {
   position: relative;
   // background-color: #d9d9d9ff;
-  height: 100vh;
+  height: 90vh;
   img {
     width: 165px;
   }
@@ -20,6 +20,7 @@
   transition: 0.3s;
 
 }
+
 .style-card:hover {
   transform: scale(1.1);
 }
@@ -30,8 +31,19 @@
 }
 .dropdown {
   position: absolute;
-  top: 290px;
+  margin-right: 165px;
+  top: 250px;
   right: 50px;
+  margin-left: none;
+  h1 {
+    color: $fyre-platinium;
+    margin-bottom: 15px;
+    font-size: 45px;
+  }
+  h5 {
+    color: $fyre-platinium;
+    margin-bottom: 30px;
+  }
 }
 #dj-1 {
   position: absolute;

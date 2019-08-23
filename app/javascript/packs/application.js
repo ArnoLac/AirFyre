@@ -1,4 +1,5 @@
 import "bootstrap";
+import "../plugins/flatpickr"
 
 
 const toggleForm = (btn_id, form_id) => {

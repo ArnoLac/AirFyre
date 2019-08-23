@@ -1,7 +1,9 @@
-<div class="container">
+<div class="d-flex justify-content-center">
   <h1>Become a new Dj !</h1>
+</div>
 
+<div class="d-flex justify-content-center" id="admin-container">
+  <div class="col-sm-6 col-lg-4" id="admin-form">
   <%= render 'form', dj_profile: @dj_profile %>
-
-  <%= link_to 'Back to Dj pages', dj_profiles_path %>
+  </div>
 </div>
