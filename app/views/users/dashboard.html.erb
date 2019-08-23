@@ -45,10 +45,13 @@
   <% @bookings_user.each do |booking| %>
   <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 15px">
     <h5 style="margin: 0; color: #E5E5E5"><%= booking.name %>, <%= booking.location %> | <%= Date::MONTHNAMES[booking.date.month] %>
-      <%= booking.date.year%></h5>
+      <%= booking.date.year%> with <%= booking.dj_profile.stage_name%> </h5>
     <div>
       <% if booking.validated == false %>
-      <h6 style="color:orange" style="margin: 0">Pending</h6>
+      <div class="d-flex align-items-center">
+        <h6 style="color:orange; margin-bottom:0px; margin-right:10px">Pending</h6>
+        <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, booking_path(booking), method: :delete, data: {confirm: "Are you sure ?"} %>
+      </div>
       <% else %>
       <h6 style="color:green" style="margin: 0">Validated</h6>
       <% end %>
