@@ -421,7 +421,7 @@ end
 #random reviews
 (1..200).each do |x|
   b = Booking.first.id-1
-  comments = [["Crazy set!", 5], ["Amazing performance", 5], ["Very professionnal", 4], ["Not that great", 3], ["Did not show up..", 1], ["Best DJ I have seen", 5], ["Did not respect the audience", 2], ["Ok performance was expecting a bit more", 3], ["Loved it!!!", 5], ["Amazing DJ, go for it!", ]]
+  comments = [["Crazy set!", 5], ["Amazing performance", 5], ["Very professionnal", 4], ["Not that great", 3], ["Did not show up..", 1], ["Best DJ I have seen", 5], ["Did not respect the audience", 2], ["Ok performance was expecting a bit more", 3], ["Loved it!!!", 5], ["Amazing DJ, go for it!", 5]]
   selection = comments.sample
   review = Review.new(fyre_stars: selection[1], comment: selection[0])
   review.booking = Booking.find(b + x)
