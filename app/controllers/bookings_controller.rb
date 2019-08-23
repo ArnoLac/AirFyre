@@ -36,7 +36,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to dj_profile_path(@booking.dj_profile)
+    redirect_to dashboard_path(@booking.user)
   end
 
   private
