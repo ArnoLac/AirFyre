@@ -16,6 +16,13 @@
       <%= link_to genre, root_path(query: genre), class:"dropdown-item" %>
       <% end %>
     </div>
+    <% if @query %>
+    <div class="d-flex justify-content-center" style="margin-top: 30px">
+      <div class="genre-name" id="front-page">
+        <%= @query %>
+      </div>
+    </div>
+    <% end %>
   </div>
 </div>
 
