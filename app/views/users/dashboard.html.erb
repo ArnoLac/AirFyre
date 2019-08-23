@@ -30,7 +30,7 @@
         <% if booking.validated == false %>
           <%= simple_form_for(booking) do |f| %>
             <%= f.input :validated, as: :hidden, input_html: { value: true } %>
-            <%= f.button :submit, "Accept Booking",class: "btn-ghost" %>
+            <%= f.button :submit, "Accept Booking",class: "btn-ghost-orange" %>
           <% end %>
         <% else %>
           <h6 style="color: green">Validated</h6>
