@@ -3,6 +3,9 @@
 }
 
 .pending {
+  width: 150px;
+  height: 50px;
+  margin-bottom: 0px;
   margin-right: 5px;
   color: white !important;
   background-color: $fyre-orange;
@@ -10,6 +13,10 @@
   border-radius: 50px;
   opacity: 0.8;
   transition: opacity 0.3s ease;
+  font-family: "Work Sans", "sans-serif";
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .pending:hover {
@@ -17,6 +24,9 @@
 }
 
 .past {
+  width: 150px;
+  height: 50px;
+  margin-bottom: 0px;
   margin-right: 5px;
   color: white !important;
   background-color: grey;
@@ -24,6 +34,11 @@
   border-radius: 50px;
   opacity: 0.8;
   transition: opacity 0.3s ease;
+  font-family: "Work Sans", "sans-serif";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .past:hover {
@@ -31,6 +46,9 @@
 }
 
 .validated {
+  width: 150px;
+  height: 50px;
+  margin-bottom: 0px;
   margin-right: 5px;
   color: white !important;
   background-color: green;
@@ -38,10 +56,25 @@
   border-radius: 50px;
   opacity: 0.8;
   transition: opacity 0.3s ease;
+  font-family: "Work Sans", "sans-serif";
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }
 
 .validated:hover {
     opacity: 1;
+}
+
+.card-right {
+  width: 350px;
+  justify-content: space-between;
+
+  i {
+    color: white;
+    margin: 0px;
+    font-size: 20px;
   }
+}
 
