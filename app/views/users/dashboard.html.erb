@@ -36,7 +36,7 @@
         <% if booking.validated == false %>
           <%= simple_form_for(booking) do |f| %>
             <%= f.input :validated, as: :hidden, input_html: { value: true } %>
-            <%= f.button :submit, "Accept Booking",class: "btn-ghost" %>
+            <%= f.button :submit, "Accept Booking",class: "btn-ghost-orange" %>
           <% end %>
         <% else %>
           <h6 class="validated">Validated</h6>
@@ -61,6 +61,7 @@
       <%= booking.date.year%></h5>
     <% else %>
     <h5 style="margin: 0; color: #E5E5E5"><%= booking.name %>, <%= booking.location %> | <%= Date::MONTHNAMES[booking.date.month] %>
+
       <%= booking.date.year%></h5>
       <% end %>
     <div class="booking-status">
@@ -76,6 +77,7 @@
           <% else %>
             <h6 class="validated">Validated</h6> <h6 class="past">Rated. Thanks!</h6>
           <% end %>
+
       <% else %>
       <!-- Booking accepted party has not happened yet-->
         <h6 class="validated">Validated</h6>

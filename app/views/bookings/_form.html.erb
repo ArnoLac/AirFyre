@@ -5,7 +5,8 @@
 
     <div class="form-inputs">
       <%= b.input :name %>
-      <%= b.input :date %>
+      <%= b.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%#= b.input :date %>
       <%= b.input :location %>
       <%= b.input :set_length %>
       <%= b.input :dj_profile_id, as: :hidden, input_html: {value: @dj_profile.id } %>
