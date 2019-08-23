@@ -22,7 +22,8 @@
 }
 
 .style-card:hover {
-  transform: scale(1.1);
+  transform: scale(1.4);
+  z-index: 10000 !important;
 }
 .all-dj-btn {
   position: absolute;
@@ -32,13 +33,17 @@
 .dropdown {
   position: absolute;
   margin-right: 165px;
-  top: 250px;
-  right: 50px;
+  top: 265px;
+  right: -95px;
   margin-left: none;
+  text-align: center;
+  // justify-content: middle;
+  // display: flex;
   h1 {
     color: $fyre-platinium;
     margin-bottom: 15px;
     font-size: 45px;
+    right: 70px;
   }
   h5 {
     color: $fyre-platinium;
@@ -74,7 +79,7 @@
   top: 250px;
   left: 40px;
   width: 165px;
-  height: 242px;
+  height: 132px;
   z-index: 85;
 }
 #dj-5 {
@@ -120,8 +125,8 @@
 #dj-10 {
   position: absolute;
   top: 350px;
-  left: 185px;
-  width: 165px;
+  left: 195px;
+  width: 150px;
   height: 242px;
   z-index: 65;
 }
@@ -168,7 +173,7 @@
 #dj-16 {
   position: absolute;
   top: 353px;
-  left: 440px;
+  left: 470px;
   width: 140px;
   height: 185px;
   z-index: 10;
@@ -186,7 +191,7 @@
   top: 140px;
   left: 490px;
   width: 165px;
-  height: 165px;
+  height: 145px;
   z-index: 850;
 }
 #dj-19 {
@@ -199,27 +204,117 @@
 }
 #dj-20 {
   position: absolute;
-  top: 290px;
-  left: 565px;
-  width: 165px;
+  top: 375px;
+  left: 600px;
+  width: 125px;
   height: 165px;
 }
 #dj-21 {
   position: absolute;
-  top: 480px;
-  left: 665px;
-  width: 185px;
+  top: 536px;
+  left: 645px;
+  width: 160px;
   height: 125px;
+  z-index: 960;
 }
-#dj-fourtet {
+#dj-22 {
   position: absolute;
+  top: 50px;
+  left: 650px;
+  width: 145px;
+  height: 140px;
 }
-#dj-marc-r {
+#dj-23 {
   position: absolute;
+  top: 265px;
+  left: 560px;
+  width: 165px;
+  height: 115px;
+  z-index: 1000;
 }
-#dj-imperatrice {
+#dj-24 {
   position: absolute;
+  top: 520px;
+  left: 795px;
+  width: 140px;
+  height: 95px;
+  z-index: 2000;
 }
-#dj-moby {
+#dj-25 {
   position: absolute;
+  top: 160px;
+  left: 650px;
+  width: 150px;
+  height: 105px;
+  z-index: 100;
+}
+#dj-26 {
+  position: absolute;
+  top: 70px;
+  left: 775px;
+  width: 115px;
+  height: 175px;
+  z-index: 0;
+}
+#dj-27 {
+  position: absolute;
+  top: 380px;
+  left: 50px;
+  width: 145px;
+  height: 92px;
+  z-index: 85;
+}
+
+#dj-28 {
+  position: absolute;
+  top: 435px;
+  left: 710px;
+  width: 155px;
+  height: 105px;
+  z-index: 1005;
+
+}
+
+#dj-29 {
+  position: absolute;
+  top: 235px;
+  left: 710px;
+  width: 165px;
+  height: 95px;
+  z-index: 1000;
+}
+
+#dj-30 {
+  position: absolute;
+  top: 305px;
+  left: 700px;
+  width: 145px;
+  height: 155px;
+  z-index: 1000;
+}
+#dj-31 {
+  position: absolute;
+  top: 410px;
+  left: 820px;
+  width: 135px;
+  height: 135px;
+  z-index: 1000;
+}
+
+#dj-32 {
+  position: absolute;
+  top: 160px;
+  left: 850px;
+  width: 100px;
+  height: 105px;
+  z-index: 100;
+}
+
+#dj-33 {
+  position: absolute;
+  top: 235px;
+  left: 825px;
+  width: 165px;
+  height: 195px;
+  z-index: 0;
 }
