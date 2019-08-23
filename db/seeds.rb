@@ -405,7 +405,6 @@ user.remote_photo_url = url
 user.save!
 
 #random bookings
-
 location_list = ["Paris", "Berlin", "Rotterdam", "Kiev", "Tourcoing", "Limoges", "Dunkerque", "Los Angeles", "Tokyo"]
 djs = DjProfile.all.map {|dj| dj.user_id}
 promoters = User.all.map {|promoter| promoter.id} - djs
