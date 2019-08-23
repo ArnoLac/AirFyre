@@ -397,7 +397,7 @@ dj.save!
   users = User.all.map {|user| user.id} - djs
   (1..5).each do
     booking = Booking.new(name: Faker::TvShows::SiliconValley.company, date: DateTime.now, location: location_list.sample, set_length: 2)
-    booking.user = User.find(users.sample)
+    booking.user = User.all.sample
     booking.dj_profile = DjProfile.all.sample
     # booking.dj_profile = DjProfile.where(user_id: djs.sample.to_i)
     booking.validated = true
