@@ -154,7 +154,7 @@ user.remote_photo_url = url
 user.save!
 soundcloud = "https://soundcloud.com/leae"
 dj = DjProfile.new(stage_name: "Marc Rebillet", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["Techno"]
+dj.genres = ["Techno", "Disco", "Electro"]
 dj.user = user
 dj.save!
 
@@ -163,9 +163,9 @@ user = User.new(email: "flav@gmail.com", password: "azerty")
 user.username = "Flavien"
 user.remote_photo_url = url
 user.save!
-soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
+soundcloud = "https://soundcloud.com/flavienberger"
 dj = DjProfile.new(stage_name: "Flavien Berger", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["Disco"]
+dj.genres = ["House", "Techno", "Minimal", "Deep House"]
 dj.user = user
 dj.save!
 
@@ -174,9 +174,9 @@ user = User.new(email: "f@gmail.com", password: "azerty")
 user.username = "Francois"
 user.remote_photo_url = url
 user.save!
-soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
+soundcloud = "https://soundcloud.com/fkj-2"
 dj = DjProfile.new(stage_name: "fkj", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["Deep House", "Electro", "House"]
+dj.genres = ["Deep House", "House", "Deep House", "Disco"]
 dj.user = user
 dj.save!
 
@@ -185,9 +185,9 @@ user = User.new(email: "todd@gmail.com", password: "azerty")
 user.username = "Todd"
 user.remote_photo_url = url
 user.save!
-soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
+soundcloud = "https://soundcloud.com/toddterje"
 dj = DjProfile.new(stage_name: "Todd Terje", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["Deep House", "Electro", "House"]
+dj.genres = ["Deep House", "Techno", "House", "Electro", "Disco", "Minimal"]
 dj.user = user
 dj.save!
 
@@ -196,9 +196,9 @@ user = User.new(email: "jean@gmail.com", password: "azerty")
 user.username = "Jean"
 user.remote_photo_url = url
 user.save!
-soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
+soundcloud = "https://soundcloud.com/jeantonique"
 dj = DjProfile.new(stage_name: "Jean Tonique", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["Deep House", "Electro", "Techno"]
+dj.genres = ["Deep House", "House", "Disco"]
 dj.user = user
 dj.save!
 
@@ -207,9 +207,9 @@ user = User.new(email: "palmier@gmail.com", password: "azerty")
 user.username = "Palmier"
 user.remote_photo_url = url
 user.save!
-soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
+soundcloud = "https://soundcloud.com/palmstrax"
 dj = DjProfile.new(stage_name: "Palms Trax", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["House", "Electro", "Techno", "Disco"]
+dj.genres = ["Deep House", "House", "Disco", "Techno"]
 dj.user = user
 dj.save!
 
@@ -218,9 +218,9 @@ user = User.new(email: "pap@gmail.com", password: "azerty")
 user.username = "Papi"
 user.remote_photo_url = url
 user.save!
-soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
+soundcloud = "https://soundcloud.com/papooz"
 dj = DjProfile.new(stage_name: "Papooz", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["House", "Electro", "Deep House", "Disco"]
+dj.genres = ["Deep House", "Disco"]
 dj.user = user
 dj.save!
 
@@ -229,9 +229,9 @@ user = User.new(email: "lewis@gmail.com", password: "azerty")
 user.username = "Lewis"
 user.remote_photo_url = url
 user.save!
-soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
+soundcloud = "https://soundcloud.com/lewis-ofman"
 dj = DjProfile.new(stage_name: "Lewis Ofman", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["House", "Electro", "Deep House", "Disco"]
+dj.genres = ["House", "Deep House", "Disco"]
 dj.user = user
 dj.save!
 
@@ -251,9 +251,9 @@ user = User.new(email: "venice@gmail.com", password: "azerty")
 user.username = "Venise Louis"
 user.remote_photo_url = url
 user.save!
-soundcloud = "https://soundcloud.com/user-643769603/charlie-baudelaire-4-linvitation-au-voyage-prod-par-gautier-borot"
+soundcloud = "https://soundcloud.com/user-656083012"
 dj = DjProfile.new(stage_name: "Venice Club", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["House", "Techno", "Deep House", "Disco"]
+dj.genres = ["Deep House", "Disco"]
 dj.user = user
 dj.save!
 
@@ -390,30 +390,15 @@ dj.genres = ["Disco"]
 dj.user = user
 dj.save!
 
-
-#Random Users
-(1..20).each do
-  user = User.new(email: Faker::Internet.email, password: "azerty")
-  user.username = Faker::Name.name
-  user.save!
-end
-
-#User for demo
-url = "https://avatars1.githubusercontent.com/u/51454685?s=460&v=4"
-user = User.new(email: "lena@gmail.com", password: "azerty")
-user.username = "Lena"
-user.remote_photo_url = url
-user.save!
-
 #random bookings
-(1..22).each do
+(1..22).each do |x|
   location_list = ["Paris", "Berlin", "Rotterdam", "Kiev", "Tourcoing", "Limoges"]
-  djs = DjProfile.all.map {|user| user.user_id}
-  users = User.all.map {|user| user.user_id} - djs
+  y = User.first.id - 1
+  z = DjProfile.first.id - 1
   (1..5).each do
     booking = Booking.new(name: Faker::TvShows::SiliconValley.company, date: DateTime.now, location: location_list.sample, set_length: 2)
-    booking.user = User.find(users.sample)
-    booking.dj_profile = DjProfile.find(djs.sample)
+    booking.user = User.find(y + x)
+    booking.dj_profile = DjProfile.find(z + x)
     booking.validated = true
     booking.save!
   end
@@ -421,10 +406,18 @@ end
 
 #random reviews
 (1..110).each do |x|
+  stars = [1,2,3,4,5]
+  comments = ["Crazy set!", "Amazing performance", "Very professionnal", "Not that great", "Did not show up.."]
   b = Booking.first.id-1
-  comments = [["Crazy set!", 5], ["Amazing performance", 5], ["Very professionnal", 4], ["Not that great", 3], ["Did not show up..", 1]]
-  selection = comments.sample
-  review = Review.new(fyre_stars: selection[1], comment: selection[0])
+  review = Review.new(fyre_stars: 4, comment: comments.sample)
   review.booking = Booking.find(b + x)
   review.save!
 end
+
+
+#User for demo
+url = "https://avatars1.githubusercontent.com/u/51454685?s=460&v=4"
+user = User.new(email: "lena@gmail.com", password: "azerty")
+user.username = "Lena"
+user.remote_photo_url = url
+user.save!
