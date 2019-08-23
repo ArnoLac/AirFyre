@@ -28,7 +28,7 @@
         <%#= link_to "BOOK THE ARTIST", "#collapseExample", class:"btn-ghost-orange mt-3", id:"booking-btn"  %>
         <a href="#collapseExample" data-scroll class="btn-ghost-orange mt-3" id="booking-btn">BOOK THE ARTIST</a>
 
-        <p>This DJ plays</p>
+        <p>Genres</p>
           <div class="genres">
           <% @dj_profile.genres.each do |genre| %>
           <div  class="genre-name">  <%= link_to genre, genre_path(genre), class:"genre-name"  %></div>
@@ -58,8 +58,8 @@
 
       <!-- Right card -->
       <!-- We need to show all past bookings before validation -->
-      <div class="dj-card">
-        <h3 class="mb-0"><%= @dj_profile.stage_name %>'s</h3>
+      <div class="dj-card" id="past-events">
+        <!-- <h3 class="mb-0"><%#= @dj_profile.stage_name %>'s</h3> -->
         <h3>PAST EVENTS</h3>
 
           <% @bookings.each do |booking| %>
