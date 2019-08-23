@@ -209,7 +209,7 @@ user.remote_photo_url = url
 user.save!
 soundcloud = "https://soundcloud.com/palmstrax"
 dj = DjProfile.new(stage_name: "Palms Trax", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["Deep House", "House", "Disco", "Techno"]
+dj.genres = ["House", "Electro", "Techno"]
 dj.user = user
 dj.save!
 
@@ -253,7 +253,7 @@ user.remote_photo_url = url
 user.save!
 soundcloud = "https://soundcloud.com/user-656083012"
 dj = DjProfile.new(stage_name: "Venice Club", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["Deep House", "Disco"]
+dj.genres = ["House", "Techno", "Deep House"]
 dj.user = user
 dj.save!
 
@@ -297,7 +297,7 @@ user.remote_photo_url = url
 user.save!
 soundcloud = "https://soundcloud.com/kazy-lambist"
 dj = DjProfile.new(stage_name: "Kaziy Lambist", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["Electro", "House", "Disco"]
+dj.genres = ["Electro", "House"]
 dj.user = user
 dj.save!
 
@@ -374,7 +374,7 @@ user.remote_photo_url = url
 user.save!
 soundcloud = "https://soundcloud.com/romare"
 dj = DjProfile.new(stage_name: "Sebastien Tellier", bio: Faker::TvShows::SiliconValley.quote, social_media: soundcloud)
-dj.genres = ["Deep House", "Disco", "Minimal"]
+dj.genres = ["Deep House", "Minimal"]
 dj.user = user
 dj.save!
 
@@ -390,27 +390,40 @@ dj.genres = ["Disco"]
 dj.user = user
 dj.save!
 
+#Random Users
+(1..20).each do
+  user = User.new(email: Faker::Internet.email, password: "azerty")
+  user.username = Faker::Name.name
+  user.save!
+end
+
+#User for demo
+url = "https://avatars2.githubusercontent.com/u/51527781?s=460&v=4"
+user = User.new(email: "gege@gmail.com", password: "azerty")
+user.username = "Gégé"
+user.remote_photo_url = url
+user.save!
+
 #random bookings
-(1..22).each do |x|
-  location_list = ["Paris", "Berlin", "Rotterdam", "Kiev", "Tourcoing", "Limoges"]
-  djs = DjProfile.all.map {|user| user.user_id}
-  users = User.all.map {|user| user.id} - djs
-  (1..5).each do
-    booking = Booking.new(name: Faker::TvShows::SiliconValley.company, date: DateTime.now, location: location_list.sample, set_length: 2)
-    booking.user = User.find(users.sample)
-    booking.dj_profile = DjProfile.all.sample
-    # booking.dj_profile = DjProfile.where(user_id: djs.sample.to_i)
-    booking.validated = true
-    booking.save!
-  end
+
+location_list = ["Paris", "Berlin", "Rotterdam", "Kiev", "Tourcoing", "Limoges", "Dunkerque", "Los Angeles", "Tokyo"]
+djs = DjProfile.all.map {|dj| dj.user_id}
+promoters = User.all.map {|promoter| promoter.id} - djs
+
+(1..200).each do
+  booking = Booking.new(name: Faker::TvShows::SiliconValley.company, date: DateTime.now, location: location_list.sample, set_length: 2)
+  booking.user = User.find(promoters.sample)
+  booking.dj_profile = DjProfile.find_by(user_id: djs.sample)
+  booking.validated = true
+  booking.save!
 end
 
 #random reviews
-(1..110).each do |x|
-  stars = [1,2,3,4,5]
-  comments = ["Crazy set!", "Amazing performance", "Very professionnal", "Not that great", "Did not show up.."]
+(1..200).each do |x|
   b = Booking.first.id-1
-  review = Review.new(fyre_stars: 4, comment: comments.sample)
+  comments = [["Crazy set!", 5], ["Amazing performance", 5], ["Very professionnal", 4], ["Not that great", 3], ["Did not show up..", 1], ["Best DJ I have seen", 5], ["Did not respect the audience", 2], ["Ok performance was expecting a bit more", 3], ["Loved it!!!", 5], ["Amazing DJ, go for it!", ]]
+  selection = comments.sample
+  review = Review.new(fyre_stars: selection[1], comment: selection[0])
   review.booking = Booking.find(b + x)
   review.save!
 end
