@@ -1,0 +1,47 @@
+.booking-status {
+  display: flex;
+}
+
+.pending {
+  margin-right: 5px;
+  color: white !important;
+  background-color: $fyre-orange;
+  padding: 8px 24px;
+  border-radius: 50px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.pending:hover {
+  opacity: 1;
+}
+
+.past {
+  margin-right: 5px;
+  color: white !important;
+  background-color: grey;
+  padding: 8px 24px;
+  border-radius: 50px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.past:hover {
+  opacity: 1;
+}
+
+.validated {
+  margin-right: 5px;
+  color: white !important;
+  background-color: green;
+  padding: 8px 24px;
+  border-radius: 50px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+
+}
+
+.validated:hover {
+    opacity: 1;
+  }
+
