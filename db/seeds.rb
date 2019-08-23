@@ -393,12 +393,13 @@ dj.save!
 #random bookings
 (1..22).each do |x|
   location_list = ["Paris", "Berlin", "Rotterdam", "Kiev", "Tourcoing", "Limoges"]
-  y = User.first.id - 1
-  z = DjProfile.first.id - 1
+  djs = DjProfile.all.map {|user| user.user_id}
+  users = User.all.map {|user| user.id} - djs
   (1..5).each do
     booking = Booking.new(name: Faker::TvShows::SiliconValley.company, date: DateTime.now, location: location_list.sample, set_length: 2)
-    booking.user = User.find(y + x)
-    booking.dj_profile = DjProfile.find(z + x)
+    booking.user = User.find(users.sample)
+    booking.dj_profile = DjProfile.all.sample
+    # booking.dj_profile = DjProfile.where(user_id: djs.sample.to_i)
     booking.validated = true
     booking.save!
   end
